@@ -3,459 +3,679 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Younes Mouhib — Mathematics, ETH Zürich</title>
-<meta name="description" content="Younes Mouhib — MSc Mathematics, ETH Zürich (2026). Combinatorics, Ramsey theory, computer-assisted proofs: record lower bounds on Hales–Jewett numbers, with machine-checked certificates.">
+<title>Younes Mouhib · Mathematician, MSc ETH Zurich</title>
+<meta name="description" content="Younes Mouhib, MSc Mathematics from ETH Zurich. Data science, optimisation and quantitative analysis. Projects, research and CV.">
 <meta name="author" content="Younes Mouhib">
 <link rel="canonical" href="https://ysmouhib.github.io/">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#6366f1">
 <meta property="og:type" content="profile">
-<meta property="og:title" content="Younes Mouhib — Mathematics, ETH Zürich">
-<meta property="og:description" content="Combinatorics · Ramsey theory · machine-verified computation — record lower bounds on Hales–Jewett numbers (MSc thesis, ETH Zürich, 2026).">
+<meta property="og:title" content="Younes Mouhib · Mathematician, MSc ETH Zurich">
+<meta property="og:description" content="Data science, optimisation and quantitative analysis. Projects, research and CV.">
 <meta property="og:url" content="https://ysmouhib.github.io/">
 <meta property="og:image" content="https://ysmouhib.github.io/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Younes Mouhib — MSc Mathematics, ETH Zürich">
+<meta property="og:image:alt" content="Younes Mouhib, MSc Mathematics, ETH Zurich">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cg fill='none' stroke='%23c3cbd4' stroke-width='1.4'%3E%3Cpath d='M6 22 16 17 26 22M16 6 16 17M6 12 16 17 26 12M6 12 6 22 16 27 26 22 26 12 16 7Z'/%3E%3C/g%3E%3Cpolyline points='6,22 16,17' fill='none' stroke='%232c5a78' stroke-width='2.4' stroke-linecap='round'/%3E%3Cpolyline points='26,22 16,17' fill='none' stroke='%23b98a3c' stroke-width='2.4' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='17' r='2' fill='%232c5a78'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Younes Mouhib","url":"https://ysmouhib.github.io/","jobTitle":"Mathematician","alumniOf":[{"@type":"CollegeOrUniversity","name":"ETH Zurich"},{"@type":"CollegeOrUniversity","name":"EPFL"}],"sameAs":["https://www.linkedin.com/in/younes-mouhib/","https://github.com/ysmouhib","https://scholar.google.com/citations?user=RhamXjkAAAAJ","https://arxiv.org/a/mouhib_y_1"]}
+</script>
+<!-- Visual design adapted from "portfolio-template" by Samarpan Jayswal (owsam22), MIT License: https://github.com/owsam22/portfolio-template -->
 <style>
 :root{
-  --paper:#ffffff; --paper-2:#fafbfc; --rule:#e7eaee; --rule-2:#dde2e8;
-  --ink:#14212e; --body:#39434f; --soft:#68727e; --faint:#9aa4ae;
-  --accent:#2c5a78; --accent-ink:#214a63; --accent-wash:#eef3f6; --amber:#b98a3c;
-  --lat-edge:#dee3e9; --lat-node:#b3bdc7; --lat-blue:var(--accent); --lat-amber:var(--amber);
-  --serif:"Palatino Linotype",Palatino,"Book Antiqua","URW Palladio L",P052,Georgia,"Times New Roman",serif;
-  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  --maxw:940px; --navw:1040px;
+  --primary:#6366f1; --primary-dark:#4f46e5; --primary-light:#818cf8;
+  --grad:linear-gradient(135deg,#6366f1 0%,#3b82f6 100%);
+  --ink:#0f172a; --text:#475569; --muted:#64748b; --line:#e2e8f0;
+  --bg:#ffffff; --bg2:#f8fafc; --bg3:#f1f5f9;
+  --green:#15803d; --green-dot:#22c55e;
+  --shadow-sm:0 1px 2px rgba(15,23,42,.05);
+  --shadow-md:0 4px 12px rgba(15,23,42,.06);
+  --shadow-lg:0 12px 28px rgba(15,23,42,.08);
+  --shadow-xl:0 24px 48px rgba(15,23,42,.14);
+  --glow:0 0 24px rgba(99,102,241,.30);
+  --font:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace;
+  --ease:cubic-bezier(.4,0,.2,1);
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-body{margin:0;background:var(--paper);color:var(--body);font-family:var(--serif);
-  font-size:18px;line-height:1.66;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .12s,color .12s}
-a:hover{border-bottom-color:var(--accent)}
-a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
-h1,h2,h3{margin:0;color:var(--ink);font-weight:600;line-height:1.18}
-p{margin:0 0 1rem}
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{font-family:var(--font);color:var(--text);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:var(--primary-dark);text-decoration:none}
+a:focus-visible,button:focus-visible{outline:2px solid var(--primary-dark);outline-offset:3px;border-radius:8px}
+.container{max-width:1200px;margin:0 auto;padding:0 1.5rem}
+.gradient-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:var(--primary-dark)}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 
-/* eyebrow — echoes the small-caps section heads of the CV */
-.eyebrow{font-family:var(--sans);font-size:.74rem;font-weight:700;letter-spacing:.17em;
-  text-transform:uppercase;color:var(--accent);margin:0 0 22px;display:flex;align-items:center;gap:12px}
-.eyebrow::after{content:"";flex:1;height:1px;background:var(--rule)}
-
-/* ---------- nav ---------- */
-nav.top{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.86);
-  backdrop-filter:saturate(140%) blur(9px);border-bottom:1px solid var(--rule)}
-nav.top .bar{max-width:var(--navw);margin:0 auto;padding:0 28px;height:60px;
-  display:flex;align-items:center;justify-content:flex-end;gap:16px}
-nav.top .name{font-family:var(--serif);font-size:1.08rem;font-weight:600;color:var(--ink);border:0;letter-spacing:.005em}
-nav.top .menu{display:flex;align-items:center;gap:2px;flex-wrap:wrap;justify-content:flex-end}
-nav.top .menu a{font-family:var(--sans);font-size:.83rem;color:var(--soft);border:0;padding:8px 12px;border-radius:8px}
-nav.top .menu a:hover{color:var(--ink);background:var(--paper-2)}
-nav.top .menu a.cv{color:var(--accent);font-weight:600;border:1px solid var(--rule-2);margin-left:6px}
-nav.top .menu a.cv:hover{background:var(--accent-wash);border-color:var(--accent)}
-@media(max-width:640px){nav.top .menu a{padding:7px 8px;font-size:.78rem}}
+/* ---------- header ---------- */
+.header{position:fixed;top:0;left:0;width:100%;z-index:100;padding:1rem 0;transition:all .3s var(--ease)}
+.header.scrolled{background:rgba(255,255,255,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:var(--shadow-md);padding:.6rem 0}
+.header-content{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.logo-section{display:flex;flex-direction:column;gap:.3rem}
+.logo-row{display:flex;align-items:center;gap:.55rem}
+.logo-mark{width:30px;height:30px;flex:none}
+.logo-mark-lg{width:36px;height:36px}
+.logo{font-size:1.5rem;font-weight:800;line-height:1;letter-spacing:-.01em}
+.status-badge{display:inline-flex;align-items:center;gap:.4rem;font-size:.7rem;font-weight:600;color:var(--green);background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.25);padding:.15rem .55rem;border-radius:20px;width:fit-content;text-transform:uppercase;letter-spacing:.04em}
+.status-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--green-dot);box-shadow:0 0 8px rgba(34,197,94,.6)}
+.nav{display:flex;align-items:center;gap:.5rem}
+.nav-menu{list-style:none;display:flex;align-items:center;gap:.25rem}
+.nav-link{display:block;font-size:.92rem;font-weight:500;color:var(--text);padding:.5rem .95rem;border-radius:999px;transition:all .2s var(--ease);position:relative}
+.nav-link:hover{color:var(--ink);background:rgba(99,102,241,.06)}
+.nav-link.active{color:var(--primary-dark);background:rgba(99,102,241,.1);font-weight:600}
+.btn-cv{display:inline-flex;align-items:center;gap:.4rem;font-size:.9rem;font-weight:700;color:#fff;background:var(--grad);padding:.55rem 1.15rem;border-radius:999px;box-shadow:0 6px 16px rgba(99,102,241,.3);margin-left:.5rem;transition:transform .2s var(--ease),box-shadow .2s var(--ease)}
+.btn-cv:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(99,102,241,.38)}
+.btn-cv svg{width:15px;height:15px}
+.menu-btn{display:none;background:none;border:0;color:var(--ink);width:44px;height:44px;border-radius:10px;cursor:pointer;align-items:center;justify-content:center}
+.menu-btn svg{width:24px;height:24px}
 
 /* ---------- hero ---------- */
-.hero{border-bottom:1px solid var(--rule)}
-.hero .grid{max-width:var(--maxw);margin:0 auto;padding:58px 28px 52px;
-  display:grid;grid-template-columns:1fr 292px;gap:52px;align-items:start}
-.hero h1{font-size:clamp(33px,4.8vw,47px);letter-spacing:-.012em}
-.hero .role{margin-top:10px;font-family:var(--sans);font-size:.98rem;font-weight:600;
-  letter-spacing:.005em;color:var(--accent)}
-.hero .aff{margin-top:3px;font-size:1.02rem;color:var(--soft)}
-.hero .lede{margin-top:20px;font-size:1.19rem;line-height:1.5;color:var(--ink);max-width:34ch}
-.hero .lede .k{color:var(--accent)}
-.hero .chips{margin-top:22px;display:flex;flex-wrap:wrap;gap:7px 8px}
-.chip{display:inline-flex;align-items:center;gap:7px;font-family:var(--sans);font-size:.82rem;
-  color:var(--body);border:1px solid var(--rule-2);border-radius:999px;padding:6px 13px;background:var(--paper)}
-.chip:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-wash)}
-.chip svg{width:14px;height:14px;flex:none;opacity:.85}
-.hero .cta{margin-top:22px}
-.btn-primary{display:inline-flex;align-items:center;gap:9px;font-family:var(--sans);font-size:.9rem;font-weight:600;
-  color:#fff;background:var(--accent);border:1px solid var(--accent);border-radius:9px;padding:11px 18px}
-.btn-primary:hover{background:var(--accent-ink);border-color:var(--accent-ink)}
-.btn-primary svg{width:16px;height:16px}
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:7rem 0 4rem;
+  background:radial-gradient(1200px 600px at 10% 0%,#e0e7ff 0%,rgba(224,231,255,0) 60%),radial-gradient(900px 600px at 100% 100%,#fce7f3 0%,rgba(252,231,243,0) 60%),linear-gradient(180deg,#f5f7ff 0%,#fbfbff 100%)}
+.particles{position:absolute;inset:0;overflow:hidden;z-index:0;pointer-events:none}
+.particles span{position:absolute;bottom:-10px;left:var(--x);width:8px;height:8px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,.45),transparent);animation:floatUp var(--d) linear var(--delay) infinite}
+@keyframes floatUp{0%{transform:translateY(0);opacity:0}10%{opacity:1}90%{opacity:1}100%{transform:translateY(-105vh);opacity:0}}
+.hero-content{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;gap:4rem;flex-wrap:wrap}
+.hero-image-container{text-align:center}
+.hero-image-wrapper{position:relative;width:280px;height:280px;margin:0 auto 1.5rem}
+.hero-image{width:100%;height:100%;border-radius:50%;object-fit:cover;border:4px solid transparent;background:linear-gradient(#fff,#fff) padding-box,var(--grad) border-box;box-shadow:var(--shadow-xl);animation:float 4s ease-in-out infinite}
+.image-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:112%;height:112%;background:radial-gradient(circle,rgba(99,102,241,.22) 0%,transparent 70%);filter:blur(30px);z-index:-1}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.hero-socials{display:flex;justify-content:center;gap:1rem}
+.social-link{width:50px;height:50px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.75);backdrop-filter:blur(12px);border:1px solid rgba(99,102,241,.15);border-radius:50%;color:var(--primary-dark);box-shadow:var(--shadow-md);transition:all .3s var(--ease)}
+.social-link svg{width:21px;height:21px}
+.social-link:hover{transform:translateY(-5px) scale(1.06);background:var(--grad);color:#fff;box-shadow:var(--glow)}
+.hero-text{max-width:600px}
+.hero-title{font-size:clamp(2.4rem,5vw,3.25rem);font-weight:900;color:var(--ink);line-height:1.15;letter-spacing:-.02em}
+.hero-subtitle{font-size:clamp(1.45rem,3vw,1.9rem);font-weight:700;margin-top:.9rem;min-height:2.6rem;display:flex;align-items:center}
+.cursor{color:var(--primary);margin-left:3px;font-weight:400;animation:blink .8s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+.hero-description{font-size:1.15rem;line-height:1.75;color:var(--text);margin-top:1.1rem;max-width:520px}
+.hero-buttons{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;min-height:48px;padding:.8rem 1.6rem;border-radius:10px;font-size:.85rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;transition:all .25s var(--ease)}
+.btn svg{width:17px;height:17px}
+.btn-dark{background:var(--ink);color:#fff;box-shadow:var(--shadow-lg)}
+.btn-dark:hover{transform:translateY(-2px);box-shadow:var(--shadow-xl);background:#1e293b}
+.btn-outline{background:rgba(255,255,255,.7);color:var(--ink);border:1px solid #cbd5e1}
+.btn-outline:hover{border-color:var(--primary);color:var(--primary-dark);transform:translateY(-2px)}
+.btn-grad{background:var(--grad);color:#fff;box-shadow:0 8px 20px rgba(99,102,241,.3)}
+.btn-grad:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(99,102,241,.4)}
 
-.aside{justify-self:center;text-align:center;width:100%}
-.portrait{width:196px;height:196px;border-radius:50%;object-fit:cover;
-  border:1px solid var(--rule-2);box-shadow:0 10px 30px rgba(20,33,46,.10);background:#fff}
-.emblem{margin:26px auto 0;width:150px}
-.emblem .lattice{width:100%;height:auto;display:block}
-.emblem figcaption{margin-top:10px;font-family:var(--sans);font-size:.72rem;color:var(--faint);letter-spacing:.02em}
-.emblem .m{font-family:var(--serif);font-style:italic;color:var(--soft)}
-@media(max-width:720px){
-  .hero .grid{grid-template-columns:1fr;gap:30px;padding:40px 28px 44px}
-  .aside{order:-1;justify-self:start;display:flex;align-items:center;gap:22px;text-align:left}
-  .portrait{width:120px;height:120px}
-  .emblem{margin:0;width:104px}
-  .emblem figcaption{display:none}
+/* ---------- sections ---------- */
+.section{padding:6rem 0}
+.tag{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--primary-dark);background:rgba(99,102,241,.08);border:1px solid rgba(99,102,241,.18);padding:.35rem .9rem;border-radius:999px}
+.tag-solid{color:#fff;background:var(--grad);border:0;box-shadow:0 6px 16px rgba(99,102,241,.3)}
+.title{font-size:clamp(2rem,4vw,2.6rem);font-weight:800;color:var(--ink);line-height:1.15;letter-spacing:-.02em;margin-top:1rem}
+.title-center{text-align:center;font-size:clamp(1.9rem,3.6vw,2.3rem);font-weight:800;letter-spacing:-.01em}
+.lead{font-size:1.05rem;line-height:1.8;color:var(--text);margin-top:1.25rem}
+.lead strong{color:var(--ink);font-weight:600}
+.center-sub{text-align:center;color:var(--text);margin:.75rem auto 0;max-width:560px}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:4rem;align-items:center}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.5rem}
+.chip{font-size:.82rem;font-weight:500;color:var(--text);background:#fff;border:1px solid var(--line);border-radius:999px;padding:.35rem .85rem}
+.chip-green{color:var(--green);background:rgba(34,197,94,.08);border-color:rgba(34,197,94,.3);font-weight:600}
+.about-photo{position:relative;justify-self:center;width:100%;max-width:360px;margin:0}
+.about-photo::before,.about-photo::after{content:"";position:absolute;width:64px;height:64px;border:2px solid var(--primary-light);border-radius:6px;z-index:0}
+.about-photo::before{top:-14px;right:-14px;border-left:0;border-bottom:0}
+.about-photo::after{bottom:-14px;left:-14px;border-right:0;border-top:0;border-color:#f0abfc}
+.about-photo img{position:relative;z-index:1;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;border-radius:22px;box-shadow:var(--shadow-xl)}
+.photo-chip{position:absolute;z-index:2;left:50%;bottom:-16px;transform:translateX(-50%);white-space:nowrap;font-size:.8rem;font-weight:600;color:var(--primary-dark);background:#fff;border-radius:999px;padding:.45rem 1rem;box-shadow:var(--shadow-lg)}
+.subhead{font-size:1.25rem;font-weight:700;color:var(--ink);margin:5rem 0 1.5rem}
+.cards-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem}
+.hl-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:1.4rem;display:flex;gap:1rem;align-items:flex-start;box-shadow:var(--shadow-sm);transition:all .3s var(--ease)}
+.hl-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:rgba(99,102,241,.3)}
+.hl-icon{flex:none;width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center}
+.hl-icon svg{width:22px;height:22px}
+.hl-card h4{font-size:1rem;font-weight:700;color:var(--ink);line-height:1.3}
+.hl-meta{font-size:.85rem;color:var(--muted);margin-top:.2rem}
+.hl-card p{font-size:.88rem;line-height:1.55;color:var(--text);margin-top:.45rem}
+.ic-indigo{background:#eef2ff;color:#4f46e5}.ic-sky{background:#e0f2fe;color:#0369a1}.ic-pink{background:#fce7f3;color:#be185d}
+.ic-amber{background:#fef3c7;color:#b45309}.ic-green{background:#dcfce7;color:#15803d}.ic-violet{background:#ede9fe;color:#6d28d9}
+
+/* projects */
+.projects-wrap{background:rgba(15,23,42,.035);border-radius:28px;padding:3.5rem 2rem}
+.showcase-header{max-width:640px;margin:0 auto;text-align:center;background:rgba(255,255,255,.65);border:1px solid rgba(255,255,255,.8);border-radius:22px;padding:2.25rem 2rem;box-shadow:var(--shadow-lg);backdrop-filter:blur(10px)}
+.showcase-header .title{margin-top:1.1rem}
+.showcase-header p{margin-top:.8rem;color:var(--text)}
+.projects-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem;margin-top:3rem}
+.project-card{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--shadow-sm);transition:all .3s var(--ease)}
+.project-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-xl);border-color:rgba(99,102,241,.3)}
+.project-visual{height:150px;display:flex;align-items:center;justify-content:center}
+.project-visual svg{width:64px;height:64px;opacity:.9}
+.pv-1{background:linear-gradient(135deg,#dcfce7,#e0f2fe);color:#15803d}
+.pv-2{background:linear-gradient(135deg,#fef3c7,#fce7f3);color:#b45309}
+.pv-3{background:linear-gradient(135deg,#e0e7ff,#e0f2fe);color:#4f46e5}
+.pv-4{background:linear-gradient(135deg,#ede9fe,#fce7f3);color:#6d28d9}
+.pv-5{background:linear-gradient(135deg,#e0f2fe,#ecfeff);color:#0369a1}
+.pv-6{background:linear-gradient(135deg,#fce7f3,#fef3c7);color:#be185d}
+.project-body{padding:1.4rem 1.4rem 1.5rem;display:flex;flex-direction:column;gap:.7rem;flex:1}
+.project-head{display:flex;align-items:flex-start;justify-content:space-between;gap:.75rem}
+.project-head h3{font-size:1.12rem;font-weight:700;color:var(--ink);line-height:1.3}
+.project-kind{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.project-links{display:flex;gap:.4rem;flex:none}
+.icon-btn{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:var(--bg3);color:var(--ink);transition:all .2s var(--ease)}
+.icon-btn svg{width:17px;height:17px}
+.icon-btn:hover{background:var(--grad);color:#fff}
+.project-body p{font-size:.92rem;line-height:1.6;color:var(--text)}
+.project-result{font-size:.88rem;color:var(--ink);font-weight:600}
+.tech-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:auto;padding-top:.4rem}
+.tech-tag{font-size:.72rem;font-weight:600;color:var(--primary-dark);background:rgba(99,102,241,.07);border:1px solid rgba(99,102,241,.12);padding:.22rem .6rem;border-radius:6px}
+
+/* research */
+.research-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:4rem;align-items:center}
+.check-list{list-style:none;margin-top:1.75rem;display:flex;flex-direction:column;gap:1rem}
+.check-list li{display:flex;gap:.8rem;align-items:flex-start}
+.check-list .ck{flex:none;width:24px;height:24px;border-radius:50%;background:rgba(99,102,241,.1);color:var(--primary-dark);display:flex;align-items:center;justify-content:center;margin-top:1px}
+.check-list .ck svg{width:14px;height:14px}
+.check-list b{display:block;color:var(--ink);font-weight:600}
+.check-list span.d{font-size:.92rem;color:var(--text)}
+.research-buttons{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:2rem}
+.code-window{position:relative;background:#1e1b4b;background:linear-gradient(160deg,#1e1b4b 0%,#0f172a 100%);border-radius:18px;box-shadow:var(--shadow-xl);overflow:hidden}
+.code-bar{display:flex;align-items:center;gap:.45rem;padding:.9rem 1.1rem;border-bottom:1px solid rgba(255,255,255,.06)}
+.code-bar i{width:11px;height:11px;border-radius:50%;display:block}
+.code-bar .fname{margin-left:auto;font-family:var(--mono);font-size:.75rem;color:#a5b4fc}
+.code-window pre{font-family:var(--mono);font-size:.84rem;line-height:1.75;color:#e2e8f0;padding:1.4rem 1.5rem 1.6rem;white-space:pre-wrap;word-break:break-word}
+.k{color:#c4b5fd}.s{color:#fde68a}.p{color:#94a3b8}
+.float-chip{position:absolute;top:-14px;right:22px;font-size:.78rem;font-weight:700;color:var(--ink);background:#fff;border-radius:999px;padding:.4rem .9rem;box-shadow:var(--shadow-lg)}
+.code-wrap{position:relative;padding-top:14px}
+
+/* experience */
+.exp-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem;margin-top:3rem}
+.exp-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:1.6rem;box-shadow:var(--shadow-sm);transition:all .3s var(--ease)}
+.exp-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:rgba(99,102,241,.3)}
+.date-pill{display:inline-block;font-size:.75rem;font-weight:700;color:var(--primary-dark);background:rgba(99,102,241,.08);border-radius:999px;padding:.25rem .7rem}
+.exp-card h3{font-size:1.08rem;font-weight:700;color:var(--ink);margin-top:.8rem;line-height:1.35}
+.exp-org{font-size:.9rem;font-weight:500;color:var(--muted);margin-top:.15rem}
+.exp-card p{font-size:.93rem;line-height:1.65;color:var(--text);margin-top:.6rem}
+
+/* skills */
+.skills-box{max-width:960px;margin:3rem auto 0;display:flex;flex-direction:column;gap:1.4rem}
+.skill-row{display:grid;grid-template-columns:150px 1fr;gap:1rem;align-items:center}
+.skill-label{font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.pills{display:flex;flex-wrap:wrap;gap:.6rem}
+.pill{display:inline-flex;align-items:center;gap:.5rem;font-size:.92rem;font-weight:600;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:999px;padding:.55rem 1rem;box-shadow:var(--shadow-md);transition:all .2s var(--ease)}
+.pill::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--grad)}
+.pill:hover{transform:translateY(-2px);border-color:rgba(99,102,241,.35)}
+.pill small{font-weight:500;color:var(--muted);font-size:.8rem}
+
+/* off the clock (bento) */
+.kicker{display:block;text-align:center;font-size:.78rem;font-weight:700;letter-spacing:.35em;text-transform:uppercase;color:var(--muted)}
+.bento{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.25rem;margin-top:2.5rem}
+.bento-card{background:#fff;border:1px solid rgba(99,102,241,.15);border-radius:22px;padding:1.6rem;transition:all .4s cubic-bezier(.16,1,.3,1)}
+.bento-card:hover{border-color:var(--primary);transform:translateY(-6px);box-shadow:0 26px 50px rgba(99,102,241,.1)}
+.bento-card .hl-icon{margin-bottom:1rem}
+.bento-card h4{font-size:1.05rem;font-weight:700;color:var(--ink)}
+.bento-card p{font-size:.9rem;line-height:1.55;color:var(--text);margin-top:.35rem}
+.bento-wide{grid-column:span 2}
+.bento-photo{grid-column:span 2;grid-row:span 2;padding:0;overflow:hidden;position:relative;min-height:320px}
+.bento-photo img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.bento-photo .credit{position:absolute;right:10px;bottom:8px;font-size:9px;line-height:1;color:rgba(255,255,255,.75);text-shadow:0 1px 2px rgba(0,0,0,.6);letter-spacing:.02em}
+
+/* contact */
+.contact-card{max-width:720px;margin:2.5rem auto 0;background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow-xl);padding:2.5rem 2rem;text-align:center}
+.mail-big{display:inline-flex;align-items:center;gap:.6rem;font-size:clamp(1.05rem,2.6vw,1.35rem);font-weight:700;color:#fff;background:var(--grad);padding:1rem 1.6rem;border-radius:999px;box-shadow:0 10px 24px rgba(99,102,241,.3);transition:all .25s var(--ease);white-space:nowrap;max-width:100%}
+.mail-big:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(99,102,241,.4)}
+.mail-big svg{width:20px;height:20px;flex:none}
+.contact-links{display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem;margin-top:1.6rem}
+.contact-links a{display:inline-flex;align-items:center;gap:.45rem;font-size:.9rem;font-weight:600;color:var(--ink);background:var(--bg2);border:1px solid var(--line);padding:.6rem 1rem;border-radius:12px;transition:all .2s var(--ease)}
+.contact-links a:hover{border-color:var(--primary);color:var(--primary-dark);background:#eef2ff}
+.contact-links svg{width:17px;height:17px}
+.contact-note{font-size:.9rem;color:var(--muted);margin-top:1.4rem}
+
+/* footer */
+.footer{background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);color:#cbd5e1;margin-top:5rem;border-top:2px dashed rgba(129,140,248,.35)}
+.footer-content{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:3rem;padding:3.5rem 1.5rem 2rem}
+.footer-brand .name{font-size:1.4rem;font-weight:800;background:linear-gradient(135deg,#a5b4fc,#93c5fd);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:#a5b4fc}
+.footer-brand p{color:#94a3b8;margin-top:.6rem;line-height:1.6}
+.footer h3{font-size:1rem;color:#fff;margin-bottom:1rem}
+.footer ul{list-style:none;display:flex;flex-direction:column;gap:.5rem}
+.footer ul a{color:#94a3b8;transition:all .25s var(--ease);display:inline-block}
+.footer ul a:hover{color:#fff;transform:translateX(4px)}
+.footer-social{display:flex;gap:.75rem;flex-wrap:wrap}
+.footer-social a{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.06);color:#cbd5e1;border:1px solid rgba(255,255,255,.08);transition:all .25s var(--ease)}
+.footer-social a:hover{background:var(--grad);color:#fff;transform:translateY(-3px)}
+.footer-social svg{width:19px;height:19px}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding:1.25rem 1.5rem 1.75rem;text-align:center;font-size:.85rem;color:#94a3b8}
+
+/* reveal */
+.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.js .reveal.in{opacity:1;transform:none}
+
+/* responsive */
+@media (max-width:980px){
+  .about-grid,.research-grid{grid-template-columns:1fr;gap:3rem}
+  .projects-grid,.cards-3{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .bento{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .bento-photo{grid-column:span 2;grid-row:auto;min-height:300px}
 }
-
-/* ---------- generic section ---------- */
-.sec{border-bottom:1px solid var(--rule)}
-.sec .wrap{padding:52px 28px}
-
-/* ---------- research (about + research merged) ---------- */
-.research .split{display:grid;grid-template-columns:1fr 288px;gap:46px;align-items:start}
-@media(max-width:760px){.research .split{grid-template-columns:1fr;gap:30px}}
-.research .prose p{max-width:64ch}
-.research .prose .lead{font-size:1.06rem;color:var(--body)}
-.research hr{border:0;border-top:1px solid var(--rule);margin:26px 0 22px}
-.subhead{font-family:var(--sans);font-size:.76rem;font-weight:700;letter-spacing:.13em;
-  text-transform:uppercase;color:var(--soft);margin:0 0 10px}
-.research .minor{font-size:.99rem;color:var(--soft)}
-.research .minor a{color:var(--accent)}
-figure.photo{margin:0;position:sticky;top:80px}
-figure.photo img{width:100%;border-radius:12px;display:block;border:1px solid var(--rule-2);
-  box-shadow:0 10px 30px rgba(20,33,46,.10)}
-figure.photo figcaption{margin-top:9px;font-family:var(--sans);font-size:.74rem;color:var(--faint);text-align:center}
-@media(max-width:760px){figure.photo{position:static;max-width:360px}}
-
-/* ---------- publications ---------- */
-.pub{display:grid;grid-template-columns:34px 1fr;gap:14px;padding:20px 0;border-bottom:1px solid var(--rule)}
-.pub:last-child{border-bottom:0}
-.pub .n{font-family:var(--sans);font-size:.82rem;color:var(--faint);font-weight:600;padding-top:4px}
-.pub .t{font-size:1.1rem;color:var(--ink);font-weight:600;line-height:1.34}
-.pub .au{font-size:.99rem;color:var(--soft);margin-top:4px}
-.pub .au .me{color:var(--ink);font-weight:600;border-bottom:1px solid var(--rule-2)}
-.pub .meta{font-family:var(--sans);font-size:.8rem;color:var(--faint);margin-top:5px}
-.pub .links{margin-top:11px;display:flex;gap:7px;flex-wrap:wrap}
-.pub .links a{font-family:var(--sans);font-size:.77rem;padding:5px 12px;border-radius:7px;
-  border:1px solid var(--rule-2);color:var(--accent)}
-.pub .links a:hover{background:var(--accent-wash);border-color:var(--accent)}
-.pub-note{margin:18px 0 0;font-family:var(--sans);font-size:.84rem;color:var(--soft)}
-.pub-note a{color:var(--accent)}
-
-/* ---------- teaching ---------- */
-.teach .row{display:grid;grid-template-columns:1fr auto;gap:14px 20px;align-items:baseline;
-  padding:16px 0;border-bottom:1px solid var(--rule)}
-.teach .row:last-child{border-bottom:0}
-.teach .rl{font-size:1.04rem;color:var(--ink);font-weight:600}
-.teach .rl .role{font-weight:600}
-.teach .det{display:block;margin-top:2px;font-size:.95rem;color:var(--soft);font-style:italic}
-.teach .when{font-family:var(--sans);font-size:.82rem;color:var(--faint);white-space:nowrap;text-align:right}
-@media(max-width:560px){.teach .row{grid-template-columns:1fr}.teach .when{text-align:left}}
-
-/* ---------- contact ---------- */
-.contact p.addr{margin:0 0 20px;color:var(--body)}
-.links-grid{display:flex;flex-wrap:wrap;gap:10px}
-.link-btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--sans);font-size:.87rem;
-  color:var(--body);border:1px solid var(--rule-2);border-radius:10px;padding:11px 15px;background:var(--paper-2)}
-.link-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-wash)}
-.link-btn svg{width:17px;height:17px;flex:none}
-
-/* ---------- footer ---------- */
-footer{padding:34px 0 60px;color:var(--faint);font-family:var(--sans);font-size:.82rem}
-footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
-
-/* ---------- motion (single orchestrated moment, subject-true) ---------- */
-.lattice polyline{stroke-dasharray:150;stroke-dashoffset:150;animation:hj-draw 1s cubic-bezier(.22,.61,.36,1) .35s forwards}
-.lattice polyline:nth-of-type(2){animation-delay:.62s}
-.lattice circle{opacity:0;animation:hj-dot .5s ease .95s forwards}
-@keyframes hj-draw{to{stroke-dashoffset:0}}
-@keyframes hj-dot{to{opacity:1}}
-.rise{opacity:0;transform:translateY(9px);animation:rise .7s cubic-bezier(.22,.61,.36,1) forwards}
-.rise.d1{animation-delay:.05s}.rise.d2{animation-delay:.13s}.rise.d3{animation-delay:.21s}
-@keyframes rise{to{opacity:1;transform:none}}
+@media (max-width:820px){
+  .menu-btn{display:flex}
+  .nav-menu{position:absolute;top:calc(100% + 6px);right:1.5rem;left:1.5rem;flex-direction:column;align-items:stretch;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow-xl);padding:.6rem;display:none}
+  .nav-menu.open{display:flex}
+  .nav-link{padding:.8rem 1rem}
+  .header{background:rgba(255,255,255,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+}
+@media (max-width:640px){
+  .section{padding:4.5rem 0}
+  .hero{padding:7.5rem 0 3.5rem;min-height:auto}
+  .hero-content{gap:2.25rem}
+  .hero-image-wrapper{width:200px;height:200px}
+  .hero-text{text-align:left}
+  .projects-grid,.cards-3,.exp-grid{grid-template-columns:1fr}
+  .projects-wrap{padding:2rem 1rem;border-radius:22px}
+  .showcase-header{padding:1.75rem 1.25rem}
+  .bento{grid-template-columns:1fr}
+  .bento-photo{grid-column:auto;min-height:220px}
+  .about-photo{max-width:310px}
+  .project-visual{height:110px}
+  .project-visual svg{width:52px;height:52px}
+  .skill-row{grid-template-columns:1fr;gap:.6rem}
+  .logo{font-size:1.25rem}
+  .btn-cv{padding:.5rem .9rem}
+  .contact-card{padding:1.75rem 1rem}
+  .mail-big{font-size:.98rem;padding:.9rem 1.15rem;gap:.5rem}
+}
 @media (prefers-reduced-motion:reduce){
-  .lattice polyline{stroke-dashoffset:0;animation:none}
-  .lattice circle{opacity:1;animation:none}
-  .rise{opacity:1;transform:none;animation:none}
+  html{scroll-behavior:auto}
+  .hero-image,.particles span,.cursor{animation:none}
+  .particles{display:none}
+  .js .reveal{opacity:1;transform:none;transition:none}
+  *{transition:none!important}
 }
 </style>
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
-<a id="top"></a>
 
-<nav class="top">
-  <div class="bar">
-    <div class="menu">
-      <a href="#research">Research</a>
-      <a href="#education">Education</a>
-      <a href="#publications">Publications</a>
-      <a href="#projects">Projects</a>
-      <a href="#teaching">Teaching</a>
-      <a href="#contact">Contact</a>
-      <a class="cv" href="Younes_Mouhib_CV.pdf" target="_blank" rel="noopener">CV</a>
-    </div>
-  </div>
-</nav>
-
-<header class="hero">
-  <div class="grid">
-    <div class="col">
-      <h1 class="rise d1">Younes Mouhib</h1>
-      <div class="role rise d1">MSc Mathematics, ETH Zürich (2026)</div>
-      <div class="aff rise d1">Department of Mathematics, ETH Zürich</div>
-      <p class="lede rise d2">I completed my MSc in mathematics at ETH&nbsp;Zürich in August&nbsp;2026. I work in <span class="k">combinatorics</span>, with a focus on <span class="k">Ramsey theory</span> and computer-assisted proofs of extremal bounds.</p>
-      <div class="chips rise d3">
-        <a class="chip" href="mailto:younes.mouhib@hotmail.fr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>younes.mouhib@hotmail.fr</a>
-        <a class="chip" href="https://scholar.google.com/citations?user=RhamXjkAAAAJ" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L1 8l11 6 9-4.9V16h2V8zM5 13.2V17c0 1.7 3.1 3 7 3s7-1.3 7-3v-3.8l-7 3.8z"/></svg>Google Scholar</a>
-        <a class="chip" href="https://arxiv.org/a/mouhib_y_1" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="1"/><path d="M8 9h8M8 13h8M8 17h5"/></svg>arXiv</a>
-        <a class="chip" href="https://orcid.org/0009-0009-4338-4933" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><g fill="#fff"><circle cx="9" cy="7.5" r="1.1"/><path d="M8.2 10h1.6v7H8.2zM12 10h3.1c2.2 0 3.7 1.5 3.7 3.5S17.3 17 15.1 17H12zm1.7 1.5v4h1.3c1.3 0 2.1-.8 2.1-2s-.8-2-2.1-2z"/></g></svg>ORCID</a>
-        <a class="chip" href="https://github.com/ysmouhib" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.85 9.73.5.1.68-.22.68-.49l-.01-1.9c-2.78.62-3.37-1.2-3.37-1.2-.46-1.18-1.11-1.5-1.11-1.5-.9-.63.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.9 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.36-2.22-.26-4.56-1.14-4.56-5.05 0-1.12.39-2.03 1.03-2.74-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05a9.4 9.4 0 0 1 5 0c1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.71 1.03 1.62 1.03 2.74 0 3.92-2.34 4.78-4.57 5.04.36.32.68.94.68 1.9l-.01 2.82c0 .27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg>GitHub</a>
-        <a class="chip" href="https://www.linkedin.com/in/younes-mouhib/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.25 8h4.5v14H.25V8zM8 8h4.31v1.92h.06c.6-1.14 2.07-2.34 4.26-2.34 4.56 0 5.4 3 5.4 6.9V22h-4.5v-6.62c0-1.58-.03-3.6-2.19-3.6-2.2 0-2.53 1.72-2.53 3.49V22H8V8z"/></svg>LinkedIn</a>
-      </div>
-      <div class="cta rise d3">
-        <a class="btn-primary" href="Younes_Mouhib_CV.pdf" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
-          CV&nbsp;(PDF)</a>
-      </div>
-    </div>
-    <div class="aside">
-      <img class="portrait" src="assets/headshot.jpg" alt="Portrait of Younes Mouhib" width="196" height="196">
-      <figure class="emblem">
-        <svg class="lattice" viewBox="0 0 152 168" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-<g stroke="var(--lat-edge)" stroke-width="1" fill="none" stroke-linecap="round">
-<line x1="16" y1="50" x2="16" y2="84"/>
-<line x1="16" y1="50" x2="46" y2="33"/>
-<line x1="16" y1="50" x2="46" y2="67"/>
-<line x1="16" y1="84" x2="16" y2="118"/>
-<line x1="16" y1="84" x2="46" y2="67"/>
-<line x1="16" y1="84" x2="46" y2="101"/>
-<line x1="16" y1="118" x2="46" y2="101"/>
-<line x1="16" y1="118" x2="46" y2="135"/>
-<line x1="46" y1="33" x2="46" y2="67"/>
-<line x1="46" y1="33" x2="76" y2="16"/>
-<line x1="46" y1="33" x2="76" y2="50"/>
-<line x1="46" y1="67" x2="46" y2="101"/>
-<line x1="46" y1="67" x2="76" y2="50"/>
-<line x1="46" y1="67" x2="76" y2="84"/>
-<line x1="46" y1="101" x2="46" y2="135"/>
-<line x1="46" y1="101" x2="76" y2="84"/>
-<line x1="46" y1="101" x2="76" y2="118"/>
-<line x1="46" y1="135" x2="76" y2="118"/>
-<line x1="46" y1="135" x2="76" y2="152"/>
-<line x1="76" y1="16" x2="76" y2="50"/>
-<line x1="76" y1="16" x2="106" y2="33"/>
-<line x1="76" y1="50" x2="76" y2="84"/>
-<line x1="76" y1="50" x2="106" y2="33"/>
-<line x1="76" y1="50" x2="106" y2="67"/>
-<line x1="76" y1="84" x2="76" y2="118"/>
-<line x1="76" y1="84" x2="106" y2="67"/>
-<line x1="76" y1="84" x2="106" y2="101"/>
-<line x1="76" y1="118" x2="76" y2="152"/>
-<line x1="76" y1="118" x2="106" y2="101"/>
-<line x1="76" y1="118" x2="106" y2="135"/>
-<line x1="76" y1="152" x2="106" y2="135"/>
-<line x1="106" y1="33" x2="106" y2="67"/>
-<line x1="106" y1="33" x2="136" y2="50"/>
-<line x1="106" y1="67" x2="106" y2="101"/>
-<line x1="106" y1="67" x2="136" y2="50"/>
-<line x1="106" y1="67" x2="136" y2="84"/>
-<line x1="106" y1="101" x2="106" y2="135"/>
-<line x1="106" y1="101" x2="136" y2="84"/>
-<line x1="106" y1="101" x2="136" y2="118"/>
-<line x1="106" y1="135" x2="136" y2="118"/>
-<line x1="136" y1="50" x2="136" y2="84"/>
-<line x1="136" y1="84" x2="136" y2="118"/>
-</g>
-<polyline points="16,118 46,101 76,84" fill="none" stroke="var(--lat-blue)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
-<polyline points="136,118 106,101 76,84" fill="none" stroke="var(--lat-amber)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
-<g fill="var(--paper)" stroke="var(--lat-node)" stroke-width="1.2">
-<circle cx="16" cy="50" r="2.9"/>
-<circle cx="16" cy="84" r="2.9"/>
-<circle cx="46" cy="33" r="2.9"/>
-<circle cx="46" cy="67" r="2.9"/>
-<circle cx="46" cy="135" r="2.9"/>
-<circle cx="76" cy="16" r="2.9"/>
-<circle cx="76" cy="50" r="2.9"/>
-<circle cx="76" cy="118" r="2.9"/>
-<circle cx="76" cy="152" r="2.9"/>
-<circle cx="106" cy="33" r="2.9"/>
-<circle cx="106" cy="67" r="2.9"/>
-<circle cx="106" cy="135" r="2.9"/>
-<circle cx="136" cy="50" r="2.9"/>
-<circle cx="136" cy="84" r="2.9"/>
-</g>
-<g>
-<circle cx="106" cy="101" r="3.7" fill="var(--lat-amber)"/>
-<circle cx="136" cy="118" r="3.7" fill="var(--lat-amber)"/>
-<circle cx="16" cy="118" r="3.7" fill="var(--lat-blue)"/>
-<circle cx="46" cy="101" r="3.7" fill="var(--lat-blue)"/>
-<circle cx="76" cy="84" r="3.7" fill="var(--lat-blue)"/>
-</g></svg>
-      </figure>
-    </div>
+<header class="header" id="header">
+  <div class="container header-content">
+    <a class="logo-section" href="#home" aria-label="Younes Mouhib, back to top">
+      <span class="logo-row"><svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="#c3cbd4" stroke-width="1.4"><path d="M6 22 16 17 26 22M16 6 16 17M6 12 16 17 26 12M6 12 6 22 16 27 26 22 26 12 16 7Z"/></g><polyline points="6,22 16,17" fill="none" stroke="#4f46e5" stroke-width="2.4" stroke-linecap="round"/><polyline points="26,22 16,17" fill="none" stroke="#3b82f6" stroke-width="2.4" stroke-linecap="round"/><circle cx="16" cy="17" r="2" fill="#4f46e5"/></svg><span class="logo gradient-text">Younes Mouhib</span></span>
+      <span class="status-badge"><span class="dot"></span>Available for work</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <ul class="nav-menu" id="nav-menu">
+        <li><a class="nav-link active" href="#home">Home</a></li>
+        <li><a class="nav-link" href="#about">About</a></li>
+        <li><a class="nav-link" href="#projects">Projects</a></li>
+        <li><a class="nav-link" href="#research">Research</a></li>
+        <li><a class="nav-link" href="#experience">Experience</a></li>
+        <li><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+      <a class="btn-cv" href="Younes_Mouhib_CV.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>CV</a>
+      <button class="menu-btn" id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </nav>
   </div>
 </header>
 
-<section id="research" class="sec research">
-  <div class="wrap">
-    <div class="eyebrow"> </div>
-    <div class="split">
-      <div class="prose">
-        <p class="lead">My research is in extremal combinatorics and Ramsey theory, with computer-assisted proofs of extremal bounds. My MSc thesis (advisor: <a href="https://people.math.ethz.ch/~lorenz.halbeisen/" target="_blank" rel="noopener">Prof. Dr. Lorenz Halbeisen</a>, grade 6/6) established record lower bounds HJ(3,3)&nbsp;≥&nbsp;22 and HJ(4,2)&nbsp;≥&nbsp;14 for the Hales–Jewett numbers, via an exact symmetry reduction and SAT-based search — with every certificate re-verified by dependency-free, hand-auditable code.</p>
-        <p class="minor">I am currently preparing these results for journal submission and seeking <b>PhD opportunities in combinatorics</b>. Manuscripts and reports:
-          <a href="Mouhib_Master_Thesis.pdf" target="_blank" rel="noopener">MSc thesis (PDF)</a> ·
-          <a href="Mouhib_Semester_Project.pdf" target="_blank" rel="noopener">semester project (PDF)</a> ·
-          <a href="Mouhib_Bachelor_Thesis.pdf" target="_blank" rel="noopener">bachelor thesis (PDF)</a>.</p>
+<main>
+<!-- ================= HERO ================= -->
+<section class="hero" id="home">
+  <div class="particles" aria-hidden="true">
+    <span style="--x:6%;--d:17s;--delay:0s"></span><span style="--x:15%;--d:22s;--delay:4s"></span>
+    <span style="--x:27%;--d:19s;--delay:9s"></span><span style="--x:41%;--d:24s;--delay:2s"></span>
+    <span style="--x:55%;--d:18s;--delay:7s"></span><span style="--x:68%;--d:21s;--delay:12s"></span>
+    <span style="--x:79%;--d:16s;--delay:5s"></span><span style="--x:90%;--d:23s;--delay:10s"></span>
+  </div>
+  <div class="container hero-content">
+    <div class="hero-image-container">
+      <div class="hero-image-wrapper">
+        <div class="image-glow"></div>
+        <img class="hero-image" src="assets/headshot.jpg" alt="Portrait of Younes Mouhib" width="280" height="280">
       </div>
-      <figure class="photo">
-        <img src="assets/alps.jpg" alt="Younes Mouhib in a hammock at Trübsee, Switzerland" loading="lazy">
-        <figcaption>Trübsee, Switzerland</figcaption>
-      </figure>
+      <div class="hero-socials">
+        <a class="social-link" href="https://www.linkedin.com/in/younes-mouhib/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.25 8h4.5v14H.25V8zM8 8h4.31v1.92h.06c.6-1.14 2.07-2.34 4.26-2.34 4.56 0 5.4 3 5.4 6.9V22h-4.5v-6.62c0-1.58-.03-3.6-2.19-3.6-2.2 0-2.53 1.72-2.53 3.49V22H8V8z"/></svg></a>
+        <a class="social-link" href="https://github.com/ysmouhib" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.85 9.73.5.1.68-.22.68-.49l-.01-1.9c-2.78.62-3.37-1.2-3.37-1.2-.46-1.18-1.11-1.5-1.11-1.5-.9-.63.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.9 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.36-2.22-.26-4.56-1.14-4.56-5.05 0-1.12.39-2.03 1.03-2.74-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05a9.4 9.4 0 0 1 5 0c1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.71 1.03 1.62 1.03 2.74 0 3.92-2.34 4.78-4.57 5.04.36.32.68.94.68 1.9l-.01 2.82c0 .27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg></a>
+        <a class="social-link" href="mailto:younes.mouhib@hotmail.fr" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
+      </div>
+    </div>
+    <div class="hero-text">
+      <h1 class="hero-title">Hi, I'm <span class="gradient-text">Younes</span></h1>
+      <p class="hero-subtitle"><span class="sr-only">Data science, optimisation and quantitative analysis</span><span class="gradient-text" id="typed" aria-hidden="true">Data science</span><span class="cursor" aria-hidden="true">|</span></p>
+      <p class="hero-description">Mathematician with an MSc from ETH Zurich, looking for an entry-level role or internship in data science, optimisation or quantitative analysis.</p>
+      <div class="hero-buttons">
+        <a class="btn btn-dark" href="Younes_Mouhib_CV.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>Download CV</a>
+        <a class="btn btn-outline" href="https://github.com/ysmouhib" target="_blank" rel="noopener">View GitHub</a>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="education" class="sec teach">
-  <div class="wrap">
-    <div class="eyebrow">Education</div>
-
-    <div class="row">
-      <div class="rl"><span class="role">MSc Mathematics — ETH Zürich</span>
-        <span class="det">Final grade 5.2/6 · master's thesis 6.0/6. Coursework: Network &amp; Integer Optimization · Structural Graph Theory · Graph Theory · Algebraic Methods in Combinatorics · Algebraic Topology.</span></div>
-      <div class="when">Sept 2023 – Aug 2026</div>
-    </div>
-    <div class="row">
-      <div class="rl"><span class="role">BSc Mathematics — EPFL</span>
-        <span class="det">Coursework: Measure &amp; Integration · Ergodic Theory · Stochastic Processes · Discrete Optimization. Bachelor thesis 5.5/6: <i>On the Subadditive Ergodic Theorem and Its Applications</i>.</span></div>
-      <div class="when">Sept 2018 – Jul 2023</div>
-    </div>
-    <div class="row">
-      <div class="rl"><span class="role">Classes préparatoires MPSI/MP* — Lycée Masséna, Nice</span></div>
-      <div class="when">2016 – 2018</div>
-    </div>
-  </div>
-</section>
-
-<section id="publications" class="sec">
-  <div class="wrap">
-    <div class="eyebrow">Publications &amp; Preprints</div>
-
-    <div class="pub">
-      <div class="n">[1]</div>
-      <div>
-        <div class="t">Lower Bounds for the Hales–Jewett Numbers via Symmetric and One-Weight Colorings</div>
-        <div class="au"><span class="me">Y. Mouhib</span></div>
-        <div class="meta">Preprint · arXiv:2606.22155 [math.CO], 2026 · 46 pp.</div>
-        <div class="links">
-          <a href="https://arxiv.org/abs/2606.22155" target="_blank" rel="noopener">abstract</a>
-          <a href="https://arxiv.org/pdf/2606.22155" target="_blank" rel="noopener">PDF</a>
-          <a href="https://arxiv.org/html/2606.22155" target="_blank" rel="noopener">HTML</a>
-          <a href="https://github.com/ysmouhib/hj-certificates" target="_blank" rel="noopener">certificates</a>
-          <a href="https://ysmouhib.github.io/hales-jewett-explorer/" target="_blank" rel="noopener">explorer</a>
+<!-- ================= ABOUT ================= -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="reveal">
+        <span class="tag">Who I am</span>
+        <h2 class="title">I'm <span class="gradient-text">Younes Mouhib</span></h2>
+        <p class="lead">Mathematician trained at <strong>EPFL</strong> and <strong>ETH Zurich</strong>. My master's thesis set new record lower bounds for the Hales–Jewett numbers. I'm looking for opportunities in <strong>data science, optimisation and quantitative analysis</strong>, and I'm open to relocating anywhere in the world.</p>
+        <div class="chips">
+          <span class="chip chip-green">Available now</span>
+          <span class="chip">Open to relocation worldwide</span>
         </div>
       </div>
+      <figure class="about-photo reveal">
+        <img src="assets/alps.jpg" alt="Younes in a hammock above Trübsee, with the Alps behind" loading="lazy" width="900" height="1200">
+        <figcaption class="photo-chip">Trübsee, Switzerland</figcaption>
+      </figure>
     </div>
 
-        <p class="pub-note">This work consolidates and extends the MSc thesis. Code and colouring certificates:
-      <a href="https://github.com/ysmouhib/hj-certificates" target="_blank" rel="noopener">github.com/ysmouhib/hj-certificates</a> (archived: DOI 10.5281/zenodo.21537624).</p>
-  </div>
-</section>
-
-<section id="projects" class="sec teach">
-  <div class="wrap">
-    <div class="eyebrow">Projects</div>
-
-    <div class="row">
-      <div class="rl"><span class="role"><a href="https://github.com/ysmouhib/hj-certificates" target="_blank" rel="noopener">hj-certificates</a> — SAT encoders &amp; standalone verifiers</span>
-        <span class="det">Every thesis bound re-derived by a dependency-free check; CI-verified, reproducible in seconds.</span></div>
-      <div class="when">2025 – 2026</div>
-    </div>
-    <div class="row">
-      <div class="rl"><span class="role"><a href="https://github.com/ysmouhib/near-momentum-bot" target="_blank" rel="noopener">Momentum strategy research</a> — cost-aware backtesting</span>
-        <span class="det">Fees &amp; slippage on every fill, next-bar entries, worst-case tie-breaks; walk-forward validation reporting out-of-sample results only.</span></div>
-      <div class="when"> 2026 </div>
-    </div>
-    <div class="row">
-      <div class="rl"><span class="role"><a href="https://github.com/ysmouhib/brigade" target="_blank" rel="noopener">Brigade</a> — multi-agent LLM system, formally verified</span>
-        <span class="det">Agents propose, an independent Lean&nbsp;4 verifier alone accepts — a model-validation architecture for AI output.</span></div>
-      <div class="when">2024 – Present</div>
-    </div>
-    <div class="row">
-      <div class="rl"><span class="role"><a href="https://ysmouhib.github.io/hales-jewett-explorer/" target="_blank" rel="noopener">Hales–Jewett Explorer</a> — interactive thesis companion</span>
-        <span class="det">Live 2D/3D grids and line families; every counter machine-checked in the browser.</span></div>
-      <div class="when">2026</div>
+    <h3 class="subhead reveal">Education</h3>
+    <div class="cards-3">
+      <div class="hl-card reveal">
+        <div class="hl-icon ic-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg></div>
+        <div><h4>MSc Mathematics</h4><div class="hl-meta">ETH Zurich · 2023–2026 · 5.21/6</div><p>Network &amp; Integer Optimization · Convex Optimization and Applications · Structural Graph Theory · Graph Algorithms · Algebraic Methods in Combinatorics · Algebraic Topology · Algebraic Geometry</p></div>
+      </div>
+      <div class="hl-card reveal">
+        <div class="hl-icon ic-sky"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg></div>
+        <div><h4>BSc Mathematics</h4><div class="hl-meta">EPFL · 2018–2023</div><p>Probability · Measure &amp; Integration · Ergodic Theory · Stochastic Processes · Statistics · Time Series · Numerical Analysis · Discrete Optimization</p></div>
+      </div>
+      <div class="hl-card reveal">
+        <div class="hl-icon ic-pink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/></svg></div>
+        <div><h4>Classes préparatoires MPSI/MP*</h4><div class="hl-meta">Lycée Masséna, Nice · 2016–2018</div><p>Mathematics, physics and computer science. Top 10% of class.</p></div>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="teaching" class="sec teach">
-  <div class="wrap">
-    <div class="eyebrow">Teaching Experience</div>
+<!-- ================= PROJECTS ================= -->
+<section class="section" id="projects" style="padding-top:2rem">
+  <div class="container">
+    <div class="projects-wrap">
+      <div class="showcase-header reveal">
+        <span class="tag tag-solid">Projects</span>
+        <h2 class="title">Selected work</h2>
+        <p>All code is public on GitHub.</p>
+      </div>
+      <div class="projects-grid">
 
-    <div class="row">
-      <div class="rl"><span class="role">Course instructor (PVK-Leiter), Topology</span>
-        <span class="det">VSETH, ETH Zürich — Zürich, Switzerland</span></div>
-      <div class="when">June 2026</div>
-    </div>
-    <div class="row">
-      <div class="rl"><span class="role">Homework tutor (grades 9–11)</span>
-        <span class="det">Collège Villamont &amp; Collège St-Roch — Lausanne, Switzerland</span></div>
-      <div class="when">July 2021 – Jan 2023</div>
-    </div>
-    <div class="row">
-      <div class="rl"><span class="role">Student mentor</span>
-        <span class="det">EPFL — Lausanne, Switzerland</span></div>
-      <div class="when">Sept 2020 – Feb 2021</div>
-    </div>
-    <div class="row">
-      <div class="rl"><span class="role">Science promotion — Science Day in Thun</span>
-        <span class="det">EPFL — Thun, Switzerland</span></div>
-      <div class="when">April 2022</div>
+        <article class="project-card reveal">
+          <div class="project-visual pv-1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7.5l3.8 2.8-1.45 4.45h-4.7L8.2 10.3z"/><path d="M12 3v4.5M15.8 10.3l4.6-1.6M14.35 14.75l2.7 3.9M9.65 14.75l-2.7 3.9M8.2 10.3L3.6 8.7"/></svg></div>
+          <div class="project-body">
+            <div class="project-head">
+              <div><div class="project-kind">Data science</div><h3>Football injury risk</h3></div>
+              <div class="project-links"><a class="icon-btn" href="https://github.com/ysmouhib/football-injury-risk" target="_blank" rel="noopener" aria-label="Football injury risk on GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.85 9.73.5.1.68-.22.68-.49l-.01-1.9c-2.78.62-3.37-1.2-3.37-1.2-.46-1.18-1.11-1.5-1.11-1.5-.9-.63.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.9 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.36-2.22-.26-4.56-1.14-4.56-5.05 0-1.12.39-2.03 1.03-2.74-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05a9.4 9.4 0 0 1 5 0c1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.71 1.03 1.62 1.03 2.74 0 3.92-2.34 4.78-4.57 5.04.36.32.68.94.68 1.9l-.01 2.82c0 .27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg></a></div>
+            </div>
+            <p>Weekly injury-risk scores for every player in Europe's top five leagues, from public data. Calibrated logistic regression on 1.29M player-weeks, tested once on a season it had never seen.</p>
+            <p class="project-result">Top 10% risk group injured 6× as often as the bottom 10%.</p>
+            <div class="tech-tags"><span class="tech-tag">Python</span><span class="tech-tag">Logistic regression</span><span class="tech-tag">LightGBM</span><span class="tech-tag">78 tests</span></div>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-visual pv-2" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l3.5-4 3 2.5L19 7"/><path d="M15 7h4v4"/></svg></div>
+          <div class="project-body">
+            <div class="project-head">
+              <div><div class="project-kind">Quant research</div><h3>Crypto momentum strategy</h3></div>
+              <div class="project-links">
+                <a class="icon-btn" href="https://github.com/ysmouhib/near-momentum-bot" target="_blank" rel="noopener" aria-label="Crypto momentum strategy on GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.85 9.73.5.1.68-.22.68-.49l-.01-1.9c-2.78.62-3.37-1.2-3.37-1.2-.46-1.18-1.11-1.5-1.11-1.5-.9-.63.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.9 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.36-2.22-.26-4.56-1.14-4.56-5.05 0-1.12.39-2.03 1.03-2.74-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05a9.4 9.4 0 0 1 5 0c1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.71 1.03 1.62 1.03 2.74 0 3.92-2.34 4.78-4.57 5.04.36.32.68.94.68 1.9l-.01 2.82c0 .27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg></a>
+                <a class="icon-btn" href="https://ysmouhib.github.io/near-momentum-bot/simulator.html" target="_blank" rel="noopener" aria-label="Open the strategy simulator"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></a>
+              </div>
+            </div>
+            <p>Cost-aware backtesting on Binance spot data: fees and slippage on every fill, walk-forward validation, out-of-sample results only, bootstrap confidence intervals.</p>
+            <p class="project-result">Where the edge did not survive costs, the report says so.</p>
+            <div class="tech-tags"><span class="tech-tag">Python</span><span class="tech-tag">Walk-forward</span><span class="tech-tag">137 tests</span><span class="tech-tag">CI</span></div>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-visual pv-3" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/></svg></div>
+          <div class="project-body">
+            <div class="project-head">
+              <div><div class="project-kind">Machine learning</div><h3>Sudoku vision</h3></div>
+              <div class="project-links"><a class="icon-btn" href="https://github.com/ysmouhib/sudoku-vision" target="_blank" rel="noopener" aria-label="Sudoku vision on GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.85 9.73.5.1.68-.22.68-.49l-.01-1.9c-2.78.62-3.37-1.2-3.37-1.2-.46-1.18-1.11-1.5-1.11-1.5-.9-.63.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.9 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.36-2.22-.26-4.56-1.14-4.56-5.05 0-1.12.39-2.03 1.03-2.74-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05a9.4 9.4 0 0 1 5 0c1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.71 1.03 1.62 1.03 2.74 0 3.92-2.34 4.78-4.57 5.04.36.32.68.94.68 1.9l-.01 2.82c0 .27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg></a></div>
+            </div>
+            <p>A small CNN reads handwritten sudoku grids, a SAT solver solves them, and MaxSAT repairs the digits the network misread.</p>
+            <p class="project-result">Fully correct grids: from 75% to 99% on 1,000 test puzzles.</p>
+            <div class="tech-tags"><span class="tech-tag">PyTorch</span><span class="tech-tag">ONNX</span><span class="tech-tag">SAT / MaxSAT</span></div>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-visual pv-4" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M8.5 6h7M7.2 8.2l3.6 7.6M16.8 8.2l-3.6 7.6"/></svg></div>
+          <div class="project-body">
+            <div class="project-head">
+              <div><div class="project-kind">AI agents</div><h3>Brigade</h3></div>
+              <div class="project-links">
+                <a class="icon-btn" href="https://github.com/ysmouhib/brigade" target="_blank" rel="noopener" aria-label="Brigade on GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.85 9.73.5.1.68-.22.68-.49l-.01-1.9c-2.78.62-3.37-1.2-3.37-1.2-.46-1.18-1.11-1.5-1.11-1.5-.9-.63.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.9 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.36-2.22-.26-4.56-1.14-4.56-5.05 0-1.12.39-2.03 1.03-2.74-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05a9.4 9.4 0 0 1 5 0c1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.71 1.03 1.62 1.03 2.74 0 3.92-2.34 4.78-4.57 5.04.36.32.68.94.68 1.9l-.01 2.82c0 .27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg></a>
+                <a class="icon-btn" href="https://ysmouhib.github.io/brigade/" target="_blank" rel="noopener" aria-label="Open the Brigade demo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></a>
+              </div>
+            </div>
+            <p>A multi-agent LLM system for mathematical proofs: Claude agents plan, write and repair proofs, and an independent Lean 4 checker decides what is accepted.</p>
+            <p class="project-result">Nothing counts as proved unless Lean verifies it.</p>
+            <div class="tech-tags"><span class="tech-tag">Python</span><span class="tech-tag">FastAPI</span><span class="tech-tag">Lean 4</span><span class="tech-tag">Docker</span></div>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-visual pv-5" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></div>
+          <div class="project-body">
+            <div class="project-head">
+              <div><div class="project-kind">Verification</div><h3>hj-certificates</h3></div>
+              <div class="project-links"><a class="icon-btn" href="https://github.com/ysmouhib/hj-certificates" target="_blank" rel="noopener" aria-label="hj-certificates on GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.85 9.73.5.1.68-.22.68-.49l-.01-1.9c-2.78.62-3.37-1.2-3.37-1.2-.46-1.18-1.11-1.5-1.11-1.5-.9-.63.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.9 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.36-2.22-.26-4.56-1.14-4.56-5.05 0-1.12.39-2.03 1.03-2.74-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05a9.4 9.4 0 0 1 5 0c1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.71 1.03 1.62 1.03 2.74 0 3.92-2.34 4.78-4.57 5.04.36.32.68.94.68 1.9l-.01 2.82c0 .27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg></a></div>
+            </div>
+            <p>SAT encoders and small stand-alone verifiers that re-check every bound in my thesis, using nothing beyond standard Python.</p>
+            <p class="project-result">Every thesis bound reproduced in seconds, on every push.</p>
+            <div class="tech-tags"><span class="tech-tag">Python</span><span class="tech-tag">SAT</span><span class="tech-tag">CI</span><span class="tech-tag">Zenodo</span></div>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-visual pv-6" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M12 12l8-4.5M12 12v9M12 12L4 7.5"/></svg></div>
+          <div class="project-body">
+            <div class="project-head">
+              <div><div class="project-kind">Web</div><h3>Hales–Jewett explorer</h3></div>
+              <div class="project-links"><a class="icon-btn" href="https://ysmouhib.github.io/hales-jewett-explorer/" target="_blank" rel="noopener" aria-label="Open the Hales–Jewett explorer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></a></div>
+            </div>
+            <p>An interactive companion to the thesis: paint colourings of 2D and 3D grids and watch every line get checked live in the browser.</p>
+            <p class="project-result">The quickest way to see what the thesis is about.</p>
+            <div class="tech-tags"><span class="tech-tag">JavaScript</span><span class="tech-tag">Visualisation</span></div>
+          </div>
+        </article>
+
+      </div>
     </div>
   </div>
 </section>
 
-<section id="beyond" class="sec teach">
-  <div class="wrap">
-    <div class="eyebrow">Beyond Mathematics</div>
-    <div class="row">
-      <div class="rl"><span class="role">Literature</span>
-        <span class="det">300+ books read, mostly in French — favourite authors include Fyodor Dostoevsky, Alexandre Dumas, Alberto Moravia, Hermann Hesse, Knut Hamsun, Naguib Mahfouz and Taha Hussein.</span></div>
-      <div class="when"></div>
+<!-- ================= RESEARCH ================= -->
+<section class="section" id="research">
+  <div class="container research-grid">
+    <div class="reveal">
+      <h2 class="title gradient-text" style="margin-top:0">Research</h2>
+      <ul class="check-list">
+        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><div><b>Master's thesis, ETH Zurich, 2026 · grade 6.0/6</b><span class="d">Improving Bounds on Hales–Jewett Numbers. Advisor: Prof. Dr. Lorenz Halbeisen.</span></div></li>
+        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><div><b>Preprint, sole author, 2026</b><span class="d">Lower Bounds for the Hales–Jewett Numbers via Symmetric and One-Weight Colorings, <a href="https://arxiv.org/abs/2606.22155" target="_blank" rel="noopener">arXiv:2606.22155</a>.</span></div></li>
+        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><div><b>Semester project, ETH Zurich, 2025</b><span class="d"><a href="Mouhib_Semester_Project.pdf" target="_blank" rel="noopener">From Hypercubes to Sparse Graphs</a>. Advisor: Prof. Dr. Lorenz Halbeisen.</span></div></li>
+        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><div><b>Student seminar, ETH Zurich, 2025</b><span class="d">The Graph Regularity Method. Organised by Prof. Dr. Benny Sudakov.</span></div></li>
+        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><div><b>Bachelor thesis, EPFL, 2023</b><span class="d"><a href="Mouhib_Bachelor_Thesis.pdf" target="_blank" rel="noopener">On the Subadditive Ergodic Theorem and Its Applications</a>. Advisors: Prof. Dr. Maria Colombo, Dr. Lucio Galeati.</span></div></li>
+      </ul>
+      <div class="research-buttons">
+        <a class="btn btn-grad" href="Mouhib_Master_Thesis.pdf" target="_blank" rel="noopener">Read the thesis</a>
+        <a class="btn btn-outline" href="https://arxiv.org/abs/2606.22155" target="_blank" rel="noopener">arXiv</a>
+      </div>
     </div>
-    <div class="row">
-      <div class="rl"><span class="role">Classical &amp; flamenco guitar</span>
-        <span class="det">10+ years of practice.</span></div>
-      <div class="when"></div>
-    </div>
-    <div class="row">
-      <div class="rl"><span class="role">Martial arts</span>
-        <span class="det">10+ years of practice.</span></div>
-      <div class="when"></div>
-    </div>
-  </div>
-</section>
-
-<section id="contact" class="sec contact">
-  <div class="wrap">
-    <div class="eyebrow">Contact</div>
-    <p class="addr">Department of Mathematics, ETH Zürich · Rämistrasse 101, 8092 Zürich, Switzerland</p>
-    <div class="links-grid">
-      <a class="link-btn" href="mailto:younes.mouhib@hotmail.fr">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
-        younes.mouhib@hotmail.fr</a>
-      <a class="link-btn" href="https://scholar.google.com/citations?user=RhamXjkAAAAJ" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L1 8l11 6 9-4.9V16h2V8zM5 13.2V17c0 1.7 3.1 3 7 3s7-1.3 7-3v-3.8l-7 3.8z"/></svg>
-        Google Scholar</a>
-      <a class="link-btn" href="https://arxiv.org/a/mouhib_y_1" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="1"/><path d="M8 9h8M8 13h8M8 17h5"/></svg>
-        arXiv</a>
-      <a class="link-btn" href="https://orcid.org/0009-0009-4338-4933" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><g fill="#fff"><circle cx="9" cy="7.5" r="1.1"/><path d="M8.2 10h1.6v7H8.2zM12 10h3.1c2.2 0 3.7 1.5 3.7 3.5S17.3 17 15.1 17H12zm1.7 1.5v4h1.3c1.3 0 2.1-.8 2.1-2s-.8-2-2.1-2z"/></g></svg>
-        ORCID</a>
-      <a class="link-btn" href="https://github.com/ysmouhib" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.85 9.73.5.1.68-.22.68-.49l-.01-1.9c-2.78.62-3.37-1.2-3.37-1.2-.46-1.18-1.11-1.5-1.11-1.5-.9-.63.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.9 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.36-2.22-.26-4.56-1.14-4.56-5.05 0-1.12.39-2.03 1.03-2.74-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05a9.4 9.4 0 0 1 5 0c1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.71 1.03 1.62 1.03 2.74 0 3.92-2.34 4.78-4.57 5.04.36.32.68.94.68 1.9l-.01 2.82c0 .27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg>
-        GitHub</a>
-      <a class="link-btn" href="https://www.linkedin.com/in/younes-mouhib/" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.25 8h4.5v14H.25V8zM8 8h4.31v1.92h.06c.6-1.14 2.07-2.34 4.26-2.34 4.56 0 5.4 3 5.4 6.9V22h-4.5v-6.62c0-1.58-.03-3.6-2.19-3.6-2.2 0-2.53 1.72-2.53 3.49V22H8V8z"/></svg>
-        LinkedIn</a>
+    <div class="code-wrap reveal">
+      <span class="float-chip">Sole author</span>
+      <div class="code-window">
+        <div class="code-bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i><span class="fname">mouhib2026.bib</span></div>
+<pre><span class="k">@misc</span><span class="p">{</span>mouhib2026,
+  title         <span class="p">=</span> <span class="s">{Lower Bounds for the Hales--Jewett
+                   Numbers via Symmetric and
+                   One-Weight Colorings}</span>,
+  author        <span class="p">=</span> <span class="s">{Younes Mouhib}</span>,
+  year          <span class="p">=</span> <span class="s">{2026}</span>,
+  eprint        <span class="p">=</span> <span class="s">{2606.22155}</span>,
+  archivePrefix <span class="p">=</span> <span class="s">{arXiv}</span>,
+  primaryClass  <span class="p">=</span> <span class="s">{math.CO}</span>
+<span class="p">}</span></pre>
+      </div>
     </div>
   </div>
 </section>
 
-<footer>
-  <div class="wrap">
-    <span>© 2026 Younes Mouhib</span>
-    <span>ETH Zürich · Department of Mathematics</span>
+<!-- ================= EXPERIENCE + SKILLS ================= -->
+<section class="section" id="experience" style="background:var(--bg2)">
+  <div class="container">
+    <h2 class="title-center gradient-text reveal">Experience</h2>
+    <div class="exp-grid">
+      <div class="exp-card reveal">
+        <span class="date-pill">2018 – 2026</span>
+        <h3>Part-time work alongside full-time study</h3>
+        <div class="exp-org">Lausanne and Zurich</div>
+        <p>FMEL Lausanne (warehouse and logistics), Tribeca and Le Cailhau (waiter), Uber (delivery courier), McDonald's Zurich (crew member), private tuition. Studies self-financed throughout.</p>
+      </div>
+      <div class="exp-card reveal">
+        <span class="date-pill">06.2026</span>
+        <h3>Course instructor (PVK), Topology</h3>
+        <div class="exp-org">ETH Zurich</div>
+        <p>Designed and taught a four-day exam-preparation course for 20+ students.</p>
+      </div>
+      <div class="exp-card reveal">
+        <span class="date-pill">2021 – 2023</span>
+        <h3>Homework tutor, grades 9–11</h3>
+        <div class="exp-org">Collèges Villamont and St-Roch, Lausanne</div>
+        <p>Mathematics and science support, with individual study plans.</p>
+      </div>
+      <div class="exp-card reveal">
+        <span class="date-pill">2020 – 2021</span>
+        <h3>Student mentor</h3>
+        <div class="exp-org">EPFL</div>
+        <p>Mentored first-year students during the COVID-19 pandemic.</p>
+      </div>
+    </div>
+
+    <h2 class="title-center gradient-text reveal" style="margin-top:5.5rem">Skills</h2>
+    <div class="skills-box">
+      <div class="skill-row reveal"><div class="skill-label">Programming</div><div class="pills"><span class="pill">Python</span><span class="pill">SQL</span><span class="pill">MATLAB</span><span class="pill">OCaml</span><span class="pill">Lean 4</span></div></div>
+      <div class="skill-row reveal"><div class="skill-label">Libraries</div><div class="pills"><span class="pill">NumPy</span><span class="pill">pandas</span><span class="pill">scikit-learn</span><span class="pill">PyTorch</span></div></div>
+      <div class="skill-row reveal"><div class="skill-label">Optimisation</div><div class="pills"><span class="pill">Gurobi</span><span class="pill">SAT solvers</span></div></div>
+      <div class="skill-row reveal"><div class="skill-label">Tools</div><div class="pills"><span class="pill">Git</span><span class="pill">CI</span><span class="pill">Docker</span><span class="pill">Linux</span><span class="pill">LaTeX</span><span class="pill">Excel</span></div></div>
+      <div class="skill-row reveal"><div class="skill-label">Languages</div><div class="pills"><span class="pill">French <small>C2</small></span><span class="pill">English <small>C1</small></span><span class="pill">Arabic <small>C1</small></span><span class="pill">Spanish <small>B2</small></span><span class="pill">Indonesian <small>B1</small></span><span class="pill">German <small>A1</small></span></div></div>
+    </div>
   </div>
+</section>
+
+<!-- ================= OFF THE CLOCK ================= -->
+<section class="section" id="life">
+  <div class="container">
+    <span class="kicker reveal">Off the clock</span>
+    <div class="bento">
+      <div class="bento-card reveal">
+        <div class="hl-icon ic-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/></svg></div>
+        <h4>Literature</h4>
+      </div>
+      <div class="bento-card reveal">
+        <div class="hl-icon ic-violet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div>
+        <h4>Guitar</h4>
+        <p>Classical and flamenco, 10+ years.</p>
+      </div>
+      <figure class="bento-card bento-photo reveal">
+        <img src="assets/zorba.jpg" alt="Film still from Zorba the Greek (1964): two men dancing on a beach, arms outstretched" loading="lazy" width="816" height="450">
+        <figcaption class="credit">Still: Zorba the Greek (1964)</figcaption>
+      </figure>
+      <div class="bento-card reveal">
+        <div class="hl-icon ic-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h4>Martial arts</h4>
+        <p>10+ years of practice.</p>
+      </div>
+      <div class="bento-card reveal">
+        <div class="hl-icon ic-sky"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="1"/><path fill="currentColor" stroke="none" d="M3 3h6v6H3zM15 3h6v6h-6zM9 9h6v6H9zM3 15h6v6H3zM15 15h6v6h-6z"/></svg></div>
+        <h4>Chess</h4>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="section" id="contact" style="padding-bottom:2rem">
+  <div class="container">
+    <h2 class="title-center gradient-text reveal">Get in touch</h2>
+    <p class="center-sub reveal">Open to opportunities in Zurich and worldwide. Email is the fastest way to reach me.</p>
+    <div class="contact-card reveal">
+      <a class="mail-big" href="mailto:younes.mouhib@hotmail.fr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>younes.mouhib@hotmail.fr</a>
+      <div class="contact-links">
+        <a href="https://www.linkedin.com/in/younes-mouhib/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.25 8h4.5v14H.25V8zM8 8h4.31v1.92h.06c.6-1.14 2.07-2.34 4.26-2.34 4.56 0 5.4 3 5.4 6.9V22h-4.5v-6.62c0-1.58-.03-3.6-2.19-3.6-2.2 0-2.53 1.72-2.53 3.49V22H8V8z"/></svg>LinkedIn</a>
+        <a href="https://github.com/ysmouhib" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.85 9.73.5.1.68-.22.68-.49l-.01-1.9c-2.78.62-3.37-1.2-3.37-1.2-.46-1.18-1.11-1.5-1.11-1.5-.9-.63.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.9 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.36-2.22-.26-4.56-1.14-4.56-5.05 0-1.12.39-2.03 1.03-2.74-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05a9.4 9.4 0 0 1 5 0c1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.71 1.03 1.62 1.03 2.74 0 3.92-2.34 4.78-4.57 5.04.36.32.68.94.68 1.9l-.01 2.82c0 .27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg>GitHub</a>
+        <a href="https://scholar.google.com/citations?user=RhamXjkAAAAJ" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2L1 8l11 6 9-4.9V16h2V8zM5 13.2V17c0 1.7 3.1 3 7 3s7-1.3 7-3v-3.8l-7 3.8z"/></svg>Google Scholar</a>
+        <a href="https://arxiv.org/a/mouhib_y_1" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg>arXiv</a>
+        <a href="Younes_Mouhib_CV.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>CV (PDF)</a>
+      </div>
+      <p class="contact-note">Based in Affoltern am Albis, Zurich area.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-content">
+    <div class="footer-brand">
+      <div class="logo-row"><svg class="logo-mark logo-mark-lg" viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="#c3cbd4" stroke-width="1.4"><path d="M6 22 16 17 26 22M16 6 16 17M6 12 16 17 26 12M6 12 6 22 16 27 26 22 26 12 16 7Z"/></g><polyline points="6,22 16,17" fill="none" stroke="#4f46e5" stroke-width="2.4" stroke-linecap="round"/><polyline points="26,22 16,17" fill="none" stroke="#3b82f6" stroke-width="2.4" stroke-linecap="round"/><circle cx="16" cy="17" r="2" fill="#4f46e5"/></svg><div class="name">Younes Mouhib</div></div>
+      <p>Mathematician, MSc ETH Zurich.<br>Data science, optimisation, quantitative analysis.</p>
+    </div>
+    <div>
+      <h3>Quick links</h3>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Connect</h3>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/in/younes-mouhib/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.25 8h4.5v14H.25V8zM8 8h4.31v1.92h.06c.6-1.14 2.07-2.34 4.26-2.34 4.56 0 5.4 3 5.4 6.9V22h-4.5v-6.62c0-1.58-.03-3.6-2.19-3.6-2.2 0-2.53 1.72-2.53 3.49V22H8V8z"/></svg></a>
+        <a href="https://github.com/ysmouhib" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.85 9.73.5.1.68-.22.68-.49l-.01-1.9c-2.78.62-3.37-1.2-3.37-1.2-.46-1.18-1.11-1.5-1.11-1.5-.9-.63.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.9 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.36-2.22-.26-4.56-1.14-4.56-5.05 0-1.12.39-2.03 1.03-2.74-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05a9.4 9.4 0 0 1 5 0c1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.71 1.03 1.62 1.03 2.74 0 3.92-2.34 4.78-4.57 5.04.36.32.68.94.68 1.9l-.01 2.82c0 .27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg></a>
+        <a href="https://scholar.google.com/citations?user=RhamXjkAAAAJ" target="_blank" rel="noopener" aria-label="Google Scholar"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2L1 8l11 6 9-4.9V16h2V8zM5 13.2V17c0 1.7 3.1 3 7 3s7-1.3 7-3v-3.8l-7 3.8z"/></svg></a>
+        <a href="mailto:younes.mouhib@hotmail.fr" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">© 2026 Younes Mouhib</div>
 </footer>
 
+<script>
+(function(){
+  var header=document.getElementById('header');
+  function onScroll(){header.classList.toggle('scrolled',window.scrollY>20)}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  // mobile menu
+  var btn=document.getElementById('menu-btn'),menu=document.getElementById('nav-menu');
+  btn.addEventListener('click',function(){var o=menu.classList.toggle('open');btn.setAttribute('aria-expanded',o);btn.setAttribute('aria-label',o?'Close menu':'Open menu')});
+  menu.addEventListener('click',function(e){if(e.target.tagName==='A'){menu.classList.remove('open');btn.setAttribute('aria-expanded','false');btn.setAttribute('aria-label','Open menu')}});
+
+  // active nav link
+  var links=[].slice.call(document.querySelectorAll('.nav-link'));
+  var ids=links.map(function(a){return a.getAttribute('href').slice(1)});
+  if('IntersectionObserver' in window){
+    var spy=new IntersectionObserver(function(entries){entries.forEach(function(en){if(en.isIntersecting){links.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+en.target.id)})}})},{rootMargin:'-45% 0px -50% 0px'});
+    ids.forEach(function(id){var s=document.getElementById(id);if(s)spy.observe(s)});
+    // scroll reveal
+    var rv=new IntersectionObserver(function(entries){entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');rv.unobserve(en.target)}})},{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(function(el){rv.observe(el)});
+  }else{document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in')})}
+
+  // typed subtitle
+  var el=document.getElementById('typed');
+  var words=['Data science','Optimisation','Quantitative analysis'];
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){el.textContent='Data science · Optimisation · Quant';return}
+  var w=0,i=words[0].length,del=true;
+  function tick(){
+    var word=words[w];
+    if(del){i--;el.textContent=word.slice(0,i);if(i===0){del=false;w=(w+1)%words.length}setTimeout(tick,i===0?350:45)}
+    else{i++;el.textContent=words[w].slice(0,i);if(i===words[w].length){del=true;setTimeout(tick,1900)}else setTimeout(tick,85)}
+  }
+  setTimeout(tick,2200);
+})();
+</script>
 </body>
 </html>
