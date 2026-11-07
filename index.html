@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Younes Mouhib · Mathematician, MSc ETH Zurich</title>
-<meta name="description" content="Younes Mouhib, MSc Mathematics from ETH Zurich. Data science, optimisation and quantitative analysis. Projects, research and CV.">
+<meta name="description" content="Younes Mouhib, MSc Mathematics from ETH Zurich. Data science, machine learning, optimization and applied AI. Projects, research and CV.">
 <meta name="author" content="Younes Mouhib">
 <link rel="canonical" href="https://ysmouhib.github.io/">
 <meta name="theme-color" content="#6366f1">
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Younes Mouhib · Mathematician, MSc ETH Zurich">
-<meta property="og:description" content="Data science, optimisation and quantitative analysis. Projects, research and CV.">
+<meta property="og:description" content="Data science, machine learning, optimization and applied AI. Projects, research and CV.">
 <meta property="og:url" content="https://ysmouhib.github.io/">
 <meta property="og:image" content="https://ysmouhib.github.io/assets/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -128,6 +128,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--primary-dark);outli
 .photo-chip{position:absolute;z-index:2;left:50%;bottom:-16px;transform:translateX(-50%);white-space:nowrap;font-size:.8rem;font-weight:600;color:var(--primary-dark);background:#fff;border-radius:999px;padding:.45rem 1rem;box-shadow:var(--shadow-lg)}
 .subhead{font-size:1.25rem;font-weight:700;color:var(--ink);margin:5rem 0 1.5rem}
 .cards-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem}
+.cards-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem}
 .hl-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:1.4rem;display:flex;gap:1rem;align-items:flex-start;box-shadow:var(--shadow-sm);transition:all .3s var(--ease)}
 .hl-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:rgba(99,102,241,.3)}
 .hl-icon{flex:none;width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center}
@@ -143,7 +144,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--primary-dark);outli
 .showcase-header{max-width:640px;margin:0 auto;text-align:center;background:rgba(255,255,255,.65);border:1px solid rgba(255,255,255,.8);border-radius:22px;padding:2.25rem 2rem;box-shadow:var(--shadow-lg);backdrop-filter:blur(10px)}
 .showcase-header .title{margin-top:1.1rem}
 .showcase-header p{margin-top:.8rem;color:var(--text)}
-.projects-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem;margin-top:3rem}
+.projects-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem;margin-top:3rem}
 .project-card{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--shadow-sm);transition:all .3s var(--ease)}
 .project-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-xl);border-color:rgba(99,102,241,.3)}
 .project-visual{height:150px;display:flex;align-items:center;justify-content:center}
@@ -194,6 +195,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--primary-dark);outli
 .exp-card h3{font-size:1.08rem;font-weight:700;color:var(--ink);margin-top:.8rem;line-height:1.35}
 .exp-org{font-size:.9rem;font-weight:500;color:var(--muted);margin-top:.15rem}
 .exp-card p{font-size:.93rem;line-height:1.65;color:var(--text);margin-top:.6rem}
+.exp-wide{grid-column:1/-1}
 
 /* skills */
 .skills-box{max-width:960px;margin:3rem auto 0;display:flex;flex-direction:column;gap:1.4rem}
@@ -268,7 +270,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--primary-dark);outli
   .hero-content{gap:2.25rem}
   .hero-image-wrapper{width:200px;height:200px}
   .hero-text{text-align:left}
-  .projects-grid,.cards-3,.exp-grid{grid-template-columns:1fr}
+  .projects-grid,.cards-3,.cards-2,.exp-grid{grid-template-columns:1fr}
   .projects-wrap{padding:2rem 1rem;border-radius:22px}
   .showcase-header{padding:1.75rem 1.25rem}
   .bento{grid-template-columns:1fr}
@@ -338,8 +340,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--primary-dark);outli
     </div>
     <div class="hero-text">
       <h1 class="hero-title">Hi, I'm <span class="gradient-text">Younes</span></h1>
-      <p class="hero-subtitle"><span class="sr-only">Data science, optimisation and quantitative analysis</span><span class="gradient-text" id="typed" aria-hidden="true">Data science</span><span class="cursor" aria-hidden="true">|</span></p>
-      <p class="hero-description">Mathematician with an MSc from ETH Zurich, looking for an entry-level role or internship in data science, optimisation or quantitative analysis.</p>
+      <p class="hero-subtitle"><span class="sr-only">Data science, machine learning, optimization and applied AI</span><span class="gradient-text" id="typed" aria-hidden="true">Data science</span><span class="cursor" aria-hidden="true">|</span></p>
+      <p class="hero-description">Mathematician with an MSc from ETH Zurich, looking for an entry-level role or internship in data science, machine learning, optimization or applied AI.</p>
       <div class="hero-buttons">
         <a class="btn btn-dark" href="Younes_Mouhib_CV.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>Download CV</a>
         <a class="btn btn-outline" href="https://github.com/ysmouhib" target="_blank" rel="noopener">View GitHub</a>
@@ -355,7 +357,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--primary-dark);outli
       <div class="reveal">
         <span class="tag">Who I am</span>
         <h2 class="title">I'm <span class="gradient-text">Younes Mouhib</span></h2>
-        <p class="lead">Mathematician trained at <strong>EPFL</strong> and <strong>ETH Zurich</strong>. My master's thesis set new record lower bounds for the Hales–Jewett numbers. I'm looking for opportunities in <strong>data science, optimisation and quantitative analysis</strong>, and I'm open to relocating anywhere in the world.</p>
+        <p class="lead">Mathematician trained at <strong>EPFL</strong> and <strong>ETH Zurich</strong>. My master thesis used a SAT solver to set new record lower bounds for the Hales–Jewett numbers. I'm looking for opportunities in <strong>data science, machine learning, optimization and applied AI</strong>, and I'm open to relocating anywhere in the world.</p>
         <div class="chips">
           <span class="chip chip-green">Available now</span>
           <span class="chip">Open to relocation worldwide</span>
@@ -368,18 +370,14 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--primary-dark);outli
     </div>
 
     <h3 class="subhead reveal">Education</h3>
-    <div class="cards-3">
+    <div class="cards-2">
       <div class="hl-card reveal">
         <div class="hl-icon ic-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg></div>
-        <div><h4>MSc Mathematics</h4><div class="hl-meta">ETH Zurich · 2023–2026 · 5.21/6</div><p>Network &amp; Integer Optimization · Convex Optimization and Applications · Structural Graph Theory · Graph Algorithms · Algebraic Methods in Combinatorics · Algebraic Topology · Algebraic Geometry</p></div>
+        <div><h4>MSc in Mathematics</h4><div class="hl-meta">ETH Zurich · 08.2026</div><p>Network and Integer Optimization · Graph Theory · Structural Graph Theory · Algebraic Methods in Combinatorics · Algebraic Topology · Algebraic Geometry · Number Theory</p></div>
       </div>
       <div class="hl-card reveal">
         <div class="hl-icon ic-sky"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg></div>
-        <div><h4>BSc Mathematics</h4><div class="hl-meta">EPFL · 2018–2023</div><p>Probability · Measure &amp; Integration · Ergodic Theory · Stochastic Processes · Statistics · Time Series · Numerical Analysis · Discrete Optimization</p></div>
-      </div>
-      <div class="hl-card reveal">
-        <div class="hl-icon ic-pink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/></svg></div>
-        <div><h4>Classes préparatoires MPSI/MP*</h4><div class="hl-meta">Lycée Masséna, Nice · 2016–2018</div><p>Mathematics, physics and computer science. Top 10% of class.</p></div>
+        <div><h4>BSc in Mathematics</h4><div class="hl-meta">EPFL · 07.2023</div><p>Probability · Statistics · Stochastic Processes · Numerical Analysis · Measure and Integration · Ergodic Theory · Functional Analysis · Discrete Optimization</p></div>
       </div>
     </div>
   </div>
@@ -397,46 +395,13 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--primary-dark);outli
       <div class="projects-grid">
 
         <article class="project-card reveal">
-          <div class="project-visual pv-1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7.5l3.8 2.8-1.45 4.45h-4.7L8.2 10.3z"/><path d="M12 3v4.5M15.8 10.3l4.6-1.6M14.35 14.75l2.7 3.9M9.65 14.75l-2.7 3.9M8.2 10.3L3.6 8.7"/></svg></div>
-          <div class="project-body">
-            <div class="project-head">
-              <div><div class="project-kind">Data science</div><h3>Football injury risk</h3></div>
-              <div class="project-links">
-                <a class="icon-btn" href="https://github.com/ysmouhib/football-injury-risk" target="_blank" rel="noopener" aria-label="Weekly risk model on GitHub" title="Weekly risk model (GitHub)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.85 9.73.5.1.68-.22.68-.49l-.01-1.9c-2.78.62-3.37-1.2-3.37-1.2-.46-1.18-1.11-1.5-1.11-1.5-.9-.63.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.9 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.36-2.22-.26-4.56-1.14-4.56-5.05 0-1.12.39-2.03 1.03-2.74-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05a9.4 9.4 0 0 1 5 0c1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.71 1.03 1.62 1.03 2.74 0 3.92-2.34 4.78-4.57 5.04.36.32.68.94.68 1.9l-.01 2.82c0 .27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg></a>
-                <a class="icon-btn" href="https://github.com/ysmouhib/Football-live-injury-risk" target="_blank" rel="noopener" aria-label="Live match-day tool on GitHub" title="Live match-day tool (GitHub)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.85 9.73.5.1.68-.22.68-.49l-.01-1.9c-2.78.62-3.37-1.2-3.37-1.2-.46-1.18-1.11-1.5-1.11-1.5-.9-.63.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.9 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.36-2.22-.26-4.56-1.14-4.56-5.05 0-1.12.39-2.03 1.03-2.74-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05a9.4 9.4 0 0 1 5 0c1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.71 1.03 1.62 1.03 2.74 0 3.92-2.34 4.78-4.57 5.04.36.32.68.94.68 1.9l-.01 2.82c0 .27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg></a>
-              </div>
-            </div>
-            <p>Two connected parts. A weekly risk model for every player in Europe's top five leagues: calibrated logistic regression on 1.29M player-weeks of public data, tested once on a season it had never seen. And a live match-day tool for bench staff that compares each player with his own normal, runs offline at the ground, and was built and tested end to end on synthetic matches.</p>
-            <p class="project-result">Weekly model: top 10% risk group injured 6× as often as the bottom 10%.</p>
-            <div class="tech-tags"><span class="tech-tag">Python</span><span class="tech-tag">scikit-learn</span><span class="tech-tag">Pre-registered holdout</span><span class="tech-tag">FastAPI</span><span class="tech-tag">280+ tests</span></div>
-          </div>
-        </article>
-
-
-        <article class="project-card reveal">
-          <div class="project-visual pv-2" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l3.5-4 3 2.5L19 7"/><path d="M15 7h4v4"/></svg></div>
-          <div class="project-body">
-            <div class="project-head">
-              <div><div class="project-kind">Quant research</div><h3>Crypto momentum strategy</h3></div>
-              <div class="project-links">
-                <a class="icon-btn" href="https://github.com/ysmouhib/near-momentum-bot" target="_blank" rel="noopener" aria-label="Crypto momentum strategy on GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.85 9.73.5.1.68-.22.68-.49l-.01-1.9c-2.78.62-3.37-1.2-3.37-1.2-.46-1.18-1.11-1.5-1.11-1.5-.9-.63.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.9 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.36-2.22-.26-4.56-1.14-4.56-5.05 0-1.12.39-2.03 1.03-2.74-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05a9.4 9.4 0 0 1 5 0c1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.71 1.03 1.62 1.03 2.74 0 3.92-2.34 4.78-4.57 5.04.36.32.68.94.68 1.9l-.01 2.82c0 .27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg></a>
-                <a class="icon-btn" href="https://ysmouhib.github.io/near-momentum-bot/simulator.html" target="_blank" rel="noopener" aria-label="Open the strategy simulator"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></a>
-              </div>
-            </div>
-            <p>Cost-aware backtesting on Binance spot data: fees and slippage on every fill, walk-forward validation, out-of-sample results only, bootstrap confidence intervals.</p>
-            <p class="project-result">Where the edge did not survive costs, the report says so.</p>
-            <div class="tech-tags"><span class="tech-tag">Python</span><span class="tech-tag">Walk-forward</span><span class="tech-tag">137 tests</span><span class="tech-tag">CI</span></div>
-          </div>
-        </article>
-
-        <article class="project-card reveal">
           <div class="project-visual pv-3" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/></svg></div>
           <div class="project-body">
             <div class="project-head">
               <div><div class="project-kind">Machine learning</div><h3>Sudoku vision</h3></div>
               <div class="project-links"><a class="icon-btn" href="https://github.com/ysmouhib/sudoku-vision" target="_blank" rel="noopener" aria-label="Sudoku vision on GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.85 9.73.5.1.68-.22.68-.49l-.01-1.9c-2.78.62-3.37-1.2-3.37-1.2-.46-1.18-1.11-1.5-1.11-1.5-.9-.63.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.9 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.36-2.22-.26-4.56-1.14-4.56-5.05 0-1.12.39-2.03 1.03-2.74-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05a9.4 9.4 0 0 1 5 0c1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.71 1.03 1.62 1.03 2.74 0 3.92-2.34 4.78-4.57 5.04.36.32.68.94.68 1.9l-.01 2.82c0 .27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg></a></div>
             </div>
-            <p>A small CNN reads handwritten sudoku grids, a SAT solver solves them, and MaxSAT repairs the digits the network misread.</p>
+            <p>A convolutional network reads handwritten sudoku grids, a SAT solver solves them, and MaxSAT repairs the digits the network misread.</p>
             <p class="project-result">Fully correct grids: from 75% to 99% on 1,000 test puzzles.</p>
             <div class="tech-tags"><span class="tech-tag">PyTorch</span><span class="tech-tag">ONNX</span><span class="tech-tag">SAT / MaxSAT</span></div>
           </div>
@@ -446,15 +411,15 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--primary-dark);outli
           <div class="project-visual pv-4" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M8.5 6h7M7.2 8.2l3.6 7.6M16.8 8.2l-3.6 7.6"/></svg></div>
           <div class="project-body">
             <div class="project-head">
-              <div><div class="project-kind">AI agents</div><h3>Brigade</h3></div>
+              <div><div class="project-kind">AI agents</div><h3>Brigade, multi-agent LLM prover</h3></div>
               <div class="project-links">
                 <a class="icon-btn" href="https://github.com/ysmouhib/brigade" target="_blank" rel="noopener" aria-label="Brigade on GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.85 9.73.5.1.68-.22.68-.49l-.01-1.9c-2.78.62-3.37-1.2-3.37-1.2-.46-1.18-1.11-1.5-1.11-1.5-.9-.63.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.9 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.36-2.22-.26-4.56-1.14-4.56-5.05 0-1.12.39-2.03 1.03-2.74-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05a9.4 9.4 0 0 1 5 0c1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.71 1.03 1.62 1.03 2.74 0 3.92-2.34 4.78-4.57 5.04.36.32.68.94.68 1.9l-.01 2.82c0 .27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg></a>
                 <a class="icon-btn" href="https://ysmouhib.github.io/brigade/" target="_blank" rel="noopener" aria-label="Open the Brigade demo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></a>
               </div>
             </div>
-            <p>A multi-agent LLM system for mathematical proofs: Claude agents plan, write and repair proofs, and an independent Lean 4 checker decides what is accepted.</p>
+            <p>LLM agents plan, write and repair mathematical proofs, and only the Lean 4 proof checker can accept them. FastAPI backend, Docker image, continuous integration.</p>
             <p class="project-result">Nothing counts as proved unless Lean verifies it.</p>
-            <div class="tech-tags"><span class="tech-tag">Python</span><span class="tech-tag">FastAPI</span><span class="tech-tag">Lean 4</span><span class="tech-tag">Docker</span></div>
+            <div class="tech-tags"><span class="tech-tag">Python</span><span class="tech-tag">FastAPI</span><span class="tech-tag">Lean 4</span><span class="tech-tag">Docker</span><span class="tech-tag">CI</span></div>
           </div>
         </article>
 
@@ -465,7 +430,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--primary-dark);outli
               <div><div class="project-kind">Verification</div><h3>hj-certificates</h3></div>
               <div class="project-links"><a class="icon-btn" href="https://github.com/ysmouhib/hj-certificates" target="_blank" rel="noopener" aria-label="hj-certificates on GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.85 9.73.5.1.68-.22.68-.49l-.01-1.9c-2.78.62-3.37-1.2-3.37-1.2-.46-1.18-1.11-1.5-1.11-1.5-.9-.63.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.9 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.36-2.22-.26-4.56-1.14-4.56-5.05 0-1.12.39-2.03 1.03-2.74-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05a9.4 9.4 0 0 1 5 0c1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.71 1.03 1.62 1.03 2.74 0 3.92-2.34 4.78-4.57 5.04.36.32.68.94.68 1.9l-.01 2.82c0 .27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg></a></div>
             </div>
-            <p>SAT encoders and small stand-alone verifiers that re-check every bound in my thesis, using nothing beyond standard Python.</p>
+            <p>SAT encoders and small stand-alone verifiers that independently re-check every bound in my thesis, using nothing beyond standard Python.</p>
             <p class="project-result">Every thesis bound reproduced in seconds, on every push.</p>
             <div class="tech-tags"><span class="tech-tag">Python</span><span class="tech-tag">SAT</span><span class="tech-tag">CI</span><span class="tech-tag">Zenodo</span></div>
           </div>
@@ -476,27 +441,14 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--primary-dark);outli
           <div class="project-body">
             <div class="project-head">
               <div><div class="project-kind">Web</div><h3>Hales–Jewett explorer</h3></div>
-              <div class="project-links"><a class="icon-btn" href="https://ysmouhib.github.io/hales-jewett-explorer/" target="_blank" rel="noopener" aria-label="Open the Hales–Jewett explorer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></a></div>
-            </div>
-            <p>An interactive companion to the thesis: paint colourings of 2D and 3D grids and watch every line get checked live in the browser.</p>
-            <p class="project-result">The quickest way to see what the thesis is about.</p>
-            <div class="tech-tags"><span class="tech-tag">JavaScript</span><span class="tech-tag">Visualisation</span></div>
-          </div>
-        </article>
-
-        <article class="project-card reveal">
-          <div class="project-visual pv-7" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="13" rx="4.5" ry="6"/><path d="M12 7V4.5M9.5 8.5L6 6M14.5 8.5L18 6M7.5 13H4M16.5 13H20M8.5 17.5l-3 2.5M15.5 17.5l3 2.5"/></svg></div>
-          <div class="project-body">
-            <div class="project-head">
-              <div><div class="project-kind">AI security</div><h3>Cockroach Smash</h3></div>
               <div class="project-links">
-                <a class="icon-btn" href="https://github.com/ysmouhib/cockroach-smash" target="_blank" rel="noopener" aria-label="Cockroach Smash on GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.85 9.73.5.1.68-.22.68-.49l-.01-1.9c-2.78.62-3.37-1.2-3.37-1.2-.46-1.18-1.11-1.5-1.11-1.5-.9-.63.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.9 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.36-2.22-.26-4.56-1.14-4.56-5.05 0-1.12.39-2.03 1.03-2.74-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05a9.4 9.4 0 0 1 5 0c1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.71 1.03 1.62 1.03 2.74 0 3.92-2.34 4.78-4.57 5.04.36.32.68.94.68 1.9l-.01 2.82c0 .27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg></a>
-                <a class="icon-btn" href="https://ysmouhib.github.io/cockroach-smash/" target="_blank" rel="noopener" aria-label="Play Cockroach Smash"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></a>
+                <a class="icon-btn" href="https://github.com/ysmouhib/hales-jewett-explorer" target="_blank" rel="noopener" aria-label="Hales–Jewett explorer on GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.85 9.73.5.1.68-.22.68-.49l-.01-1.9c-2.78.62-3.37-1.2-3.37-1.2-.46-1.18-1.11-1.5-1.11-1.5-.9-.63.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.9 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.36-2.22-.26-4.56-1.14-4.56-5.05 0-1.12.39-2.03 1.03-2.74-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05a9.4 9.4 0 0 1 5 0c1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.71 1.03 1.62 1.03 2.74 0 3.92-2.34 4.78-4.57 5.04.36.32.68.94.68 1.9l-.01 2.82c0 .27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg></a>
+                <a class="icon-btn" href="https://ysmouhib.github.io/hales-jewett-explorer/" target="_blank" rel="noopener" aria-label="Open the Hales–Jewett explorer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></a>
               </div>
             </div>
-            <p>A live multiplayer browser game used as a testbed for invisible-prompt defenses: hidden Unicode instructions aimed at AI tools (ASCII smuggling, emoji smuggling, Trojan Source) are stripped in Postgres before anyone reads them.</p>
-            <p class="project-result">20 attack payloads in CI; the tests found 4 gaps, all closed; live site 29/29.</p>
-            <div class="tech-tags"><span class="tech-tag">JavaScript</span><span class="tech-tag">Postgres / Supabase</span><span class="tech-tag">Prompt injection</span><span class="tech-tag">39 tests</span></div>
+            <p>An interactive companion to the thesis: paint colorings of 2D and 3D grids and watch every line get checked live in the browser.</p>
+            <p class="project-result">The quickest way to see what the thesis is about.</p>
+            <div class="tech-tags"><span class="tech-tag">JavaScript</span><span class="tech-tag">Visualization</span></div>
           </div>
         </article>
 
@@ -511,11 +463,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--primary-dark);outli
     <div class="reveal">
       <h2 class="title gradient-text" style="margin-top:0">Research</h2>
       <ul class="check-list">
-        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><div><b>Master's thesis, ETH Zurich, 2026 · grade 6.0/6</b><span class="d">Improving Bounds on Hales–Jewett Numbers. Advisor: Prof. Dr. Lorenz Halbeisen.</span></div></li>
-        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><div><b>Preprint, sole author, 2026</b><span class="d">Lower Bounds for the Hales–Jewett Numbers via Symmetric and One-Weight Colorings, <a href="https://arxiv.org/abs/2606.22155" target="_blank" rel="noopener">arXiv:2606.22155</a>.</span></div></li>
-        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><div><b>Semester project, ETH Zurich, 2025</b><span class="d"><a href="Mouhib_Semester_Project.pdf" target="_blank" rel="noopener">From Hypercubes to Sparse Graphs</a>. Advisor: Prof. Dr. Lorenz Halbeisen.</span></div></li>
-        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><div><b>Student seminar, ETH Zurich, 2025</b><span class="d">The Graph Regularity Method. Organised by Prof. Dr. Benny Sudakov.</span></div></li>
-        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><div><b>Bachelor thesis, EPFL, 2023</b><span class="d"><a href="Mouhib_Bachelor_Thesis.pdf" target="_blank" rel="noopener">On the Subadditive Ergodic Theorem and Its Applications</a>. Advisors: Prof. Dr. Maria Colombo, Dr. Lucio Galeati.</span></div></li>
+        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><div><b>Master thesis, ETH Zurich, 07.2026</b><span class="d"><a href="Mouhib_Master_Thesis.pdf" target="_blank" rel="noopener">Improving Bounds on Hales–Jewett Numbers</a>. Advisor: Prof. Dr. Lorenz Halbeisen. A symmetry reduction turned an intractable search over more than 10 billion points into a small constraint model (253 variables, 1,771 constraints) that CryptoMiniSat solves in seconds. Every bound is independently verified by code.</span></div></li>
+        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><div><b>Preprint, 06.2026</b><span class="d">Lower Bounds for the Hales–Jewett Numbers via Symmetric and One-Weight Colorings, <a href="https://arxiv.org/abs/2606.22155" target="_blank" rel="noopener">arXiv:2606.22155</a>. New records: HJ(3,3) from 14 to 22 and HJ(4,2) from 12 to 14.</span></div></li>
+        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><div><b>Student seminar in combinatorics (Prof. Dr. Benny Sudakov), ETH Zurich, 09.2025 – 12.2025</b><span class="d">«The Graph Regularity Method», two-hour talk. Presented Szemerédi’s regularity method. Roughly speaking, the regularity method says that every graph can be partitioned into a bounded number of equally sized parts, so that the graph is random-like between almost all pairs of parts.</span></div></li>
+        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><div><b>Bachelor thesis, EPFL, 07.2023</b><span class="d"><a href="Mouhib_Bachelor_Thesis.pdf" target="_blank" rel="noopener">On the Subadditive Ergodic Theorem and Its Applications</a>. Advisors: Prof. Dr. Maria Colombo, Dr. Lucio Galeati.</span></div></li>
       </ul>
       <div class="research-buttons">
         <a class="btn btn-grad" href="Mouhib_Master_Thesis.pdf" target="_blank" rel="noopener">Read the thesis</a>
@@ -547,38 +498,45 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--primary-dark);outli
     <h2 class="title-center gradient-text reveal">Experience</h2>
     <div class="exp-grid">
       <div class="exp-card reveal">
-        <span class="date-pill">2018 – 2026</span>
-        <h3>Part-time work alongside full-time study</h3>
-        <div class="exp-org">Lausanne and Zurich</div>
-        <p>FMEL Lausanne (warehouse and logistics), Tribeca and Le Cailhau (waiter), Uber (delivery courier), McDonald's Zurich (crew member), private tuition. Studies self-financed throughout.</p>
-      </div>
-      <div class="exp-card reveal">
         <span class="date-pill">06.2026</span>
-        <h3>Course instructor (PVK), Topology</h3>
+        <h3>Course instructor, Topology (PVK)</h3>
         <div class="exp-org">ETH Zurich</div>
-        <p>Designed and taught a four-day exam-preparation course for 20+ students.</p>
+        <p>Designed and taught a four-day exam-preparation course in topology.</p>
       </div>
       <div class="exp-card reveal">
-        <span class="date-pill">2021 – 2023</span>
-        <h3>Homework tutor, grades 9–11</h3>
+        <span class="date-pill">07.2021 – 01.2023</span>
+        <h3>Homework tutor, mathematics and science</h3>
         <div class="exp-org">Collèges Villamont and St-Roch, Lausanne</div>
-        <p>Mathematics and science support, with individual study plans.</p>
+        <p>Supported pupils in grades 9–11, with individual study plans.</p>
       </div>
       <div class="exp-card reveal">
-        <span class="date-pill">2020 – 2021</span>
+        <span class="date-pill">04.2022</span>
+        <h3>Science outreach volunteer</h3>
+        <div class="exp-org">EPFL Science Day, Thun</div>
+        <p>Ran hands-on science activities for the public.</p>
+      </div>
+      <div class="exp-card reveal">
+        <span class="date-pill">09.2020 – 02.2021</span>
         <h3>Student mentor</h3>
         <div class="exp-org">EPFL</div>
         <p>Mentored first-year students during the COVID-19 pandemic.</p>
+      </div>
+      <div class="exp-card exp-wide reveal">
+        <span class="date-pill">During studies</span>
+        <h3>Part-time jobs to finance my studies</h3>
+        <div class="exp-org">Lausanne and Zurich</div>
+        <p>Warehouse and logistics (FMEL), waiter (Tribeca, Le Cailhau), private tutoring in mathematics.</p>
       </div>
     </div>
 
     <h2 class="title-center gradient-text reveal" style="margin-top:5.5rem">Skills</h2>
     <div class="skills-box">
-      <div class="skill-row reveal"><div class="skill-label">Programming</div><div class="pills"><span class="pill">Python</span><span class="pill">SQL</span><span class="pill">MATLAB</span><span class="pill">OCaml</span><span class="pill">Lean 4</span></div></div>
-      <div class="skill-row reveal"><div class="skill-label">Libraries</div><div class="pills"><span class="pill">NumPy</span><span class="pill">pandas</span><span class="pill">scikit-learn</span><span class="pill">PyTorch</span></div></div>
-      <div class="skill-row reveal"><div class="skill-label">Optimisation</div><div class="pills"><span class="pill">Gurobi</span><span class="pill">SAT solvers</span></div></div>
-      <div class="skill-row reveal"><div class="skill-label">Tools</div><div class="pills"><span class="pill">Git</span><span class="pill">CI</span><span class="pill">Docker</span><span class="pill">Linux</span><span class="pill">LaTeX</span><span class="pill">Excel</span></div></div>
-      <div class="skill-row reveal"><div class="skill-label">Languages</div><div class="pills"><span class="pill">French <small>C2</small></span><span class="pill">English <small>C1</small></span><span class="pill">Arabic <small>C1</small></span><span class="pill">Spanish <small>B2</small></span><span class="pill">Indonesian <small>B1</small></span><span class="pill">German <small>A1</small></span></div></div>
+      <div class="skill-row reveal"><div class="skill-label">Programming</div><div class="pills"><span class="pill">Python</span><span class="pill">SQL</span><span class="pill">MATLAB</span><span class="pill">Lean 4</span></div></div>
+      <div class="skill-row reveal"><div class="skill-label">Data and ML</div><div class="pills"><span class="pill">NumPy</span><span class="pill">pandas</span><span class="pill">scikit-learn</span><span class="pill">PyTorch</span></div></div>
+      <div class="skill-row reveal"><div class="skill-label">Optimization</div><div class="pills"><span class="pill">Gurobi</span><span class="pill">SAT and MaxSAT solvers</span><span class="pill">PySAT</span><span class="pill">CryptoMiniSat</span></div></div>
+      <div class="skill-row reveal"><div class="skill-label">Tools</div><div class="pills"><span class="pill">Git</span><span class="pill">Continuous integration</span><span class="pill">Docker</span><span class="pill">Linux</span><span class="pill">LaTeX</span><span class="pill">Excel</span></div></div>
+      <div class="skill-row reveal"><div class="skill-label">Languages</div><div class="pills"><span class="pill">French <small>Native</small></span><span class="pill">Moroccan Arabic <small>Native</small></span><span class="pill">English <small>C1</small></span><span class="pill">German <small>A1</small></span><span class="pill">Spanish <small>B2</small></span><span class="pill">Indonesian <small>A2</small></span></div></div>
+      <div class="skill-row reveal"><div class="skill-label">Further education</div><div class="pills"><span class="pill">SQL for Data Science <small>UC Davis, Coursera</small></span><span class="pill">Google Cybersecurity Professional Certificate <small>Coursera</small></span></div></div>
     </div>
   </div>
 </section>
@@ -609,6 +567,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--primary-dark);outli
       <div class="bento-card reveal">
         <div class="hl-icon ic-sky"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="1"/><path fill="currentColor" stroke="none" d="M3 3h6v6H3zM15 3h6v6h-6zM9 9h6v6H9zM3 15h6v6H3zM15 15h6v6h-6z"/></svg></div>
         <h4>Chess</h4>
+        <p>Occasional member of a chess club and a debate club.</p>
       </div>
     </div>
   </div>
@@ -636,7 +595,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--primary-dark);outli
   <div class="container footer-content">
     <div class="footer-brand">
       <div class="logo-row"><svg class="logo-mark logo-mark-lg" viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="#c3cbd4" stroke-width="1.4"><path d="M6 22 16 17 26 22M16 6 16 17M6 12 16 17 26 12M6 12 6 22 16 27 26 22 26 12 16 7Z"/></g><polyline points="6,22 16,17" fill="none" stroke="#4f46e5" stroke-width="2.4" stroke-linecap="round"/><polyline points="26,22 16,17" fill="none" stroke="#3b82f6" stroke-width="2.4" stroke-linecap="round"/><circle cx="16" cy="17" r="2" fill="#4f46e5"/></svg><div class="name">Younes Mouhib</div></div>
-      <p>Mathematician, MSc ETH Zurich.<br>Data science, optimisation, quantitative analysis.</p>
+      <p>Mathematician, MSc ETH Zurich.<br>Data science, machine learning, optimization.</p>
     </div>
     <div>
       <h3>Quick links</h3>
@@ -685,8 +644,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--primary-dark);outli
 
   // typed subtitle
   var el=document.getElementById('typed');
-  var words=['Data science','Optimisation','Quantitative analysis'];
-  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){el.textContent='Data science · Optimisation · Quant';return}
+  var words=['Data science','Machine learning','Optimization','Applied AI'];
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){el.textContent='Data science · Machine learning · Optimization';return}
   var w=0,i=words[0].length,del=true;
   function tick(){
     var word=words[w];
