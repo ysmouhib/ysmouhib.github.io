@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Younes Mouhib · Mathematician, MSc ETH Zurich</title>
-<meta name="description" content="Younes Mouhib, MSc Mathematics from ETH Zurich. Data science, machine learning, optimization and applied AI. Projects, research and CV.">
+<meta name="description" content="Younes Mouhib, MSc Mathematics from ETH Zurich. Optimization, data science and applied AI: machine learning for the messy part, exact logic for the part that must be right, honest evaluation throughout. Projects, research and CV.">
 <meta name="author" content="Younes Mouhib">
 <link rel="canonical" href="https://ysmouhib.github.io/">
 <meta name="theme-color" content="#1f497d">
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Younes Mouhib · Mathematician, MSc ETH Zurich">
-<meta property="og:description" content="Data science, machine learning, optimization and applied AI. Projects, research and CV.">
+<meta property="og:description" content="Optimization, data science and applied AI: machine learning for the messy part, exact logic for the part that must be right.">
 <meta property="og:url" content="https://ysmouhib.github.io/">
 <meta property="og:image" content="https://ysmouhib.github.io/assets/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -167,9 +167,9 @@ h3{font-size:1rem;font-weight:600;color:var(--ink);line-height:1.35}
     <img class="hero-image" src="assets/headshot.jpg" alt="Portrait of Younes Mouhib" width="150" height="150">
     <div>
       <h1 class="hero-title">Younes Mouhib</h1>
-      <p class="hero-subtitle">Mathematician · MSc ETH Zurich</p>
-      <p class="hero-description">Looking for an entry-level role or internship in data science, machine learning, optimization or applied AI. My master thesis used a SAT solver to set new record lower bounds for the Hales–Jewett numbers.</p>
-      <div class="hero-meta"><span>Zurich, Switzerland</span><span>Available immediately</span><span>Open to relocation</span></div>
+      <p class="hero-subtitle">Mathematician · Optimization, Data Science &amp; Applied AI</p>
+      <p class="hero-description">Machine learning for the messy part, exact logic for the part that must be right, honest evaluation throughout. Looking for a first industry role in data science, optimization or applied AI.</p>
+      <div class="hero-meta"><span>Zurich, Switzerland</span><span>Available now</span><span>Open to relocation</span><span>No work permit needed in Switzerland &amp; the EU</span></div>
       <div class="hero-links">
         <a class="btn btn-primary" href="Younes_Mouhib_CV.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>CV (PDF)</a>
         <a class="btn" href="https://www.linkedin.com/in/younes-mouhib/" target="_blank" rel="noopener">LinkedIn</a>
@@ -186,17 +186,17 @@ h3{font-size:1rem;font-weight:600;color:var(--ink);line-height:1.35}
     <h2>About</h2>
     <div class="about-grid">
       <div>
-        <p>I studied mathematics at EPFL (BSc, 2023) and ETH Zurich (MSc, 2026). My interests moved from pure mathematics towards computation: my master thesis turned a combinatorial problem that was out of reach by brute force into a small constraint model that a SAT solver handles in seconds, and my recent projects apply machine learning, SAT solving and LLM agents to concrete problems. I am now looking for a first industry role where I can keep building on this.</p>
+        <p>I studied mathematics at EPFL (BSc, 2023) and ETH Zurich (MSc, 2026). My interests moved from pure mathematics towards computation: my master thesis turned a combinatorial problem that was out of reach by brute force into a small constraint model that a SAT solver handles in seconds, and my recent projects apply machine learning, SAT solving and LLM agents to concrete problems, always with the evaluation done honestly. I am now looking for a first industry role in data science, optimization or applied AI.</p>
         <div class="cards-2">
           <div class="card">
             <h3>MSc in Mathematics</h3>
             <div class="meta">ETH Zurich · 08.2026</div>
-            <p>Network and Integer Optimization, Graph Theory, Structural Graph Theory, Algebraic Methods in Combinatorics, Algebraic Topology, Algebraic Geometry, Number Theory</p>
+            <p>Network and Integer Optimization, Graph Theory, Structural Graph Theory, Algebraic Methods in Combinatorics, Algebraic Geometry, Algebraic Topology, Number Theory</p>
           </div>
           <div class="card">
             <h3>BSc in Mathematics</h3>
             <div class="meta">EPFL · 07.2023</div>
-            <p>Probability, Statistics, Stochastic Processes, Numerical Analysis, Measure and Integration, Ergodic Theory, Functional Analysis, Discrete Optimization</p>
+            <p>Probability, Statistics, Stochastic Processes, Numerical Analysis, Functional Analysis, Discrete Optimization, Ergodic Theory </p>
           </div>
         </div>
       </div>
@@ -216,13 +216,46 @@ h3{font-size:1rem;font-weight:600;color:var(--ink);line-height:1.35}
 
       <article class="card">
         <div class="project-head">
+          <div class="project-kind">Data science</div>
+          <div class="project-links"><a href="https://github.com/ysmouhib/football-injury-risk" target="_blank" rel="noopener">GitHub</a></div>
+        </div>
+        <h3>Football injury risk</h3>
+        <p class="sub">Weekly injury-risk scores for every player in Europe's top five leagues, built from public data only. Calibrated logistic regression with one-shot holdout.</p>
+        <p class="project-result">On the fully unseen 2024/25 season: the top-10% risk group was injured 6x as often as the bottom-10% (19.5% vs 3.1%).</p>
+        <div class="tech-tags"><span class="tech-tag">Python</span><span class="tech-tag">scikit-learn</span><span class="tech-tag">Calibration</span></div>
+      </article>
+
+      <article class="card">
+        <div class="project-head">
           <div class="project-kind">Machine learning</div>
           <div class="project-links"><a href="https://github.com/ysmouhib/sudoku-vision" target="_blank" rel="noopener">GitHub</a></div>
         </div>
         <h3>Sudoku vision</h3>
         <p class="sub">A convolutional network reads handwritten sudoku grids, a SAT solver solves them, and MaxSAT repairs the digits the network misread.</p>
-        <p class="project-result">Fully correct grids: from 75% to 99% on 1,000 test puzzles.</p>
+        <p class="project-result">Fully correct grids: from 75% to 99% on 1,000 held-out puzzles.</p>
         <div class="tech-tags"><span class="tech-tag">PyTorch</span><span class="tech-tag">ONNX</span><span class="tech-tag">SAT / MaxSAT</span></div>
+      </article>
+
+      <article class="card">
+        <div class="project-head">
+          <div class="project-kind">Quantitative evaluation</div>
+          <div class="project-links"><a href="https://github.com/ysmouhib/near-momentum-bot" target="_blank" rel="noopener">GitHub</a></div>
+        </div>
+        <h3>NEAR momentum bot</h3>
+        <p class="sub">Cost-aware backtesting and walk-forward validation for a crypto trading strategy. Documents honestly that the v1 edge did not survive 0.24% round-trip costs.</p>
+        <p class="project-result">A study in evaluation discipline: knowing when an edge is indistinguishable from noise.</p>
+        <div class="tech-tags"><span class="tech-tag">Python</span><span class="tech-tag">Backtesting</span><span class="tech-tag">Statistics</span></div>
+      </article>
+
+      <article class="card">
+        <div class="project-head">
+          <div class="project-kind">Formal methods</div>
+          <div class="project-links"><a href="https://github.com/ysmouhib/common-ground" target="_blank" rel="noopener">GitHub</a></div>
+        </div>
+        <h3>Common Ground</h3>
+        <p class="sub">A first-order logic engine that certifies whether a conclusion follows from premises: an explicit model, a refutation, or a proof checked by the Lean 4 kernel.</p>
+        <p class="project-result">Matches FOLIO labels on 195 of 204 validation examples (95.6%).</p>
+        <div class="tech-tags"><span class="tech-tag">Python</span><span class="tech-tag">Lean 4</span><span class="tech-tag">React</span></div>
       </article>
 
       <article class="card">
@@ -238,24 +271,13 @@ h3{font-size:1rem;font-weight:600;color:var(--ink);line-height:1.35}
 
       <article class="card">
         <div class="project-head">
-          <div class="project-kind">Verification</div>
+          <div class="project-kind">Reproducible research</div>
           <div class="project-links"><a href="https://github.com/ysmouhib/hj-certificates" target="_blank" rel="noopener">GitHub</a></div>
         </div>
         <h3>hj-certificates</h3>
         <p class="sub">SAT encoders and small stand-alone verifiers that independently re-check every bound in my thesis, using nothing beyond standard Python.</p>
         <p class="project-result">Every thesis bound reproduced in seconds, on every push.</p>
         <div class="tech-tags"><span class="tech-tag">Python</span><span class="tech-tag">SAT</span><span class="tech-tag">CI</span><span class="tech-tag">Zenodo</span></div>
-      </article>
-
-      <article class="card">
-        <div class="project-head">
-          <div class="project-kind">Web</div>
-          <div class="project-links"><a href="https://github.com/ysmouhib/hales-jewett-explorer" target="_blank" rel="noopener">GitHub</a><a href="https://ysmouhib.github.io/hales-jewett-explorer/" target="_blank" rel="noopener">Demo</a></div>
-        </div>
-        <h3>Hales–Jewett explorer</h3>
-        <p class="sub">An interactive companion to the thesis: paint colorings of 2D and 3D grids and watch every line get checked live in the browser.</p>
-        <p class="project-result">The quickest way to see what the thesis is about.</p>
-        <div class="tech-tags"><span class="tech-tag">JavaScript</span><span class="tech-tag">Visualization</span></div>
       </article>
 
     </div>
@@ -272,7 +294,7 @@ h3{font-size:1rem;font-weight:600;color:var(--ink);line-height:1.35}
         <div>
           <h3>Master thesis, ETH Zurich</h3>
           <div class="meta">Advisor: Prof. Dr. Lorenz Halbeisen</div>
-          <p><a href="Mouhib_Master_Thesis.pdf" target="_blank" rel="noopener">Improving Bounds on Hales–Jewett Numbers</a>. A symmetry reduction turned an intractable search over more than 10 billion points into a small constraint model (253 variables, 1,771 constraints) that CryptoMiniSat solves in seconds. Every bound is independently verified by code.</p>
+          <p><a href="Mouhib_Master_Thesis.pdf" target="_blank" rel="noopener">Improving Bounds on Hales–Jewett Numbers</a>. A symmetry reduction turned an intractable search over more than 10 billion points into a small constraint model (253 variables, 1,771 constraints) that CryptoMiniSat solves in seconds. Every bound is independently verified by code. Interactive companion: <a href="https://ysmouhib.github.io/hales-jewett-explorer/" target="_blank" rel="noopener">Hales–Jewett explorer</a>.</p>
         </div>
       </li>
       <li>
@@ -310,7 +332,7 @@ h3{font-size:1rem;font-weight:600;color:var(--ink);line-height:1.35}
     <ul class="dated">
       <li>
         <div class="date">06.2026</div>
-        <div><h3>Course instructor, Topology (PVK)</h3><div class="meta">ETH Zurich</div><p>Designed and taught a four-day exam-preparation course in topology.</p></div>
+        <div><h3>Course instructor, Topology (PVK)</h3><div class="meta">ETH Zurich</div><p>Designed and taught a four-day exam-preparation course for 20+ students.</p></div>
       </li>
       <li>
         <div class="date">07.2021 – 01.2023</div>
@@ -339,10 +361,9 @@ h3{font-size:1rem;font-weight:600;color:var(--ink);line-height:1.35}
     <div class="skills">
       <div class="skill-row"><div class="skill-label">Programming</div><div>Python, SQL, MATLAB, Lean 4</div></div>
       <div class="skill-row"><div class="skill-label">Data and ML</div><div>NumPy, pandas, scikit-learn, PyTorch</div></div>
-      <div class="skill-row"><div class="skill-label">Optimization</div><div>Gurobi, SAT and MaxSAT solvers (PySAT, CryptoMiniSat)</div></div>
-      <div class="skill-row"><div class="skill-label">Tools</div><div>Git, continuous integration, Docker, Linux, LaTeX, Excel</div></div>
+      <div class="skill-row"><div class="skill-label">Optimization</div><div>Gurobi, SAT and MaxSAT solvers (PySAT, CryptoMiniSat), constraint modeling, operations research</div></div>
+      <div class="skill-row"><div class="skill-label">Tools</div><div>Git, continuous integration, Docker, FastAPI, Linux, LaTeX</div></div>
       <div class="skill-row"><div class="skill-label">Languages</div><div>French (native), Moroccan Arabic (native), English (C1), Spanish (B2), Indonesian (A2), German (A1)</div></div>
-      <div class="skill-row"><div class="skill-label">Further education</div><div>SQL for Data Science (UC Davis, Coursera); Google Cybersecurity Professional Certificate (Coursera)</div></div>
       <div class="skill-row"><div class="skill-label">Interests</div><div>Chess, literature, martial arts (10+ years), classical and flamenco guitar (10+ years); occasional member of a chess club and a debate club</div></div>
     </div>
   </div>
