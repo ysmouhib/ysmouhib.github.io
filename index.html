@@ -79,7 +79,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 h2{font-size:1.25rem;font-weight:700;color:var(--ink);letter-spacing:-.01em;margin-bottom:1.25rem}
 h3{font-size:1rem;font-weight:600;color:var(--ink);line-height:1.35}
 .meta{font-size:.88rem;color:var(--muted);margin-top:.1rem}
-.sub{font-size:.95rem;margin-top:.4rem}
 
 /* about */
 .about-grid{display:grid;grid-template-columns:1fr 240px;gap:2.5rem;align-items:start}
@@ -90,15 +89,14 @@ h3{font-size:1rem;font-weight:600;color:var(--ink);line-height:1.35}
 .card{border:1px solid var(--line);border-radius:6px;padding:1rem 1.15rem;background:#fff}
 .card p{font-size:.9rem;margin-top:.45rem}
 
-/* projects */
-.projects-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
-.project-head{display:flex;align-items:baseline;justify-content:space-between;gap:.75rem}
-.project-kind{font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
-.project-links{font-size:.85rem;white-space:nowrap}
-.project-links a+a::before{content:"·";color:var(--muted);margin:0 .4rem}
-.project-result{font-size:.88rem;color:var(--ink);margin-top:.4rem}
-.tech-tags{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.6rem}
-.tech-tag{font-size:.75rem;font-weight:500;color:var(--text);background:var(--bg2);border:1px solid var(--line);padding:.12rem .5rem;border-radius:3px}
+/* projects: compact list */
+.project-list{list-style:none;display:flex;flex-direction:column;gap:.85rem}
+.project-list h3{display:flex;align-items:baseline;gap:.55rem;flex-wrap:wrap}
+.project-list .plinks{font-size:.85rem;font-weight:500;white-space:nowrap}
+.project-list .plinks a+a::before{content:"·";color:var(--muted);margin:0 .4rem}
+.project-kind{font-size:.72rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.project-list p{font-size:.93rem;margin-top:.2rem}
+.project-list .tech{color:var(--muted);font-size:.85rem}
 
 /* research, experience: dated lists */
 .dated{list-style:none;display:flex;flex-direction:column;gap:1.1rem}
@@ -133,7 +131,7 @@ h3{font-size:1rem;font-weight:600;color:var(--ink);line-height:1.35}
 @media (max-width:640px){
   .hero-content{flex-direction:column;align-items:flex-start;gap:1.5rem}
   .hero-image{width:120px;height:120px}
-  .cards-2,.projects-grid{grid-template-columns:1fr}
+  .cards-2{grid-template-columns:1fr}
   .dated li,.skill-row{grid-template-columns:1fr;gap:.15rem}
   .btn-cv{display:none}
 }
@@ -148,10 +146,10 @@ h3{font-size:1rem;font-weight:600;color:var(--ink);line-height:1.35}
     <nav class="nav" aria-label="Main">
       <ul class="nav-menu" id="nav-menu">
         <li><a class="nav-link" href="#about">About</a></li>
-        <li><a class="nav-link" href="#projects">Projects</a></li>
         <li><a class="nav-link" href="#research">Research</a></li>
         <li><a class="nav-link" href="#experience">Experience</a></li>
         <li><a class="nav-link" href="#skills">Skills</a></li>
+        <li><a class="nav-link" href="#projects">Projects</a></li>
         <li><a class="nav-link" href="#contact">Contact</a></li>
       </ul>
       <a class="btn-cv" href="Younes_Mouhib_CV.pdf" target="_blank" rel="noopener">CV (PDF)</a>
@@ -208,82 +206,6 @@ h3{font-size:1rem;font-weight:600;color:var(--ink);line-height:1.35}
   </div>
 </section>
 
-<!-- ================= PROJECTS ================= -->
-<section class="section" id="projects">
-  <div class="container">
-    <h2>Projects</h2>
-    <div class="projects-grid">
-
-      <article class="card">
-        <div class="project-head">
-          <div class="project-kind">Data science</div>
-          <div class="project-links"><a href="https://github.com/ysmouhib/football-injury-risk" target="_blank" rel="noopener">GitHub</a></div>
-        </div>
-        <h3>Football injury risk</h3>
-        <p class="sub">Weekly injury-risk scores for every player in Europe's top five leagues, built from public data only. Calibrated logistic regression with one-shot holdout.</p>
-        <p class="project-result">On the fully unseen 2024/25 season: the top-10% risk group was injured 6x as often as the bottom-10% (19.5% vs 3.1%).</p>
-        <div class="tech-tags"><span class="tech-tag">Python</span><span class="tech-tag">scikit-learn</span><span class="tech-tag">Calibration</span></div>
-      </article>
-
-      <article class="card">
-        <div class="project-head">
-          <div class="project-kind">Machine learning</div>
-          <div class="project-links"><a href="https://github.com/ysmouhib/sudoku-vision" target="_blank" rel="noopener">GitHub</a></div>
-        </div>
-        <h3>Sudoku vision</h3>
-        <p class="sub">A convolutional network reads handwritten sudoku grids, a SAT solver solves them, and MaxSAT repairs the digits the network misread.</p>
-        <p class="project-result">Fully correct grids: from 75% to 99% on 1,000 held-out puzzles.</p>
-        <div class="tech-tags"><span class="tech-tag">PyTorch</span><span class="tech-tag">ONNX</span><span class="tech-tag">SAT / MaxSAT</span></div>
-      </article>
-
-      <article class="card">
-        <div class="project-head">
-          <div class="project-kind">Quantitative evaluation</div>
-          <div class="project-links"><a href="https://github.com/ysmouhib/near-momentum-bot" target="_blank" rel="noopener">GitHub</a></div>
-        </div>
-        <h3>NEAR momentum bot</h3>
-        <p class="sub">Cost-aware backtesting and walk-forward validation for a crypto trading strategy. Documents honestly that the v1 edge did not survive 0.24% round-trip costs.</p>
-        <p class="project-result">A study in evaluation discipline: knowing when an edge is indistinguishable from noise.</p>
-        <div class="tech-tags"><span class="tech-tag">Python</span><span class="tech-tag">Backtesting</span><span class="tech-tag">Statistics</span></div>
-      </article>
-
-      <article class="card">
-        <div class="project-head">
-          <div class="project-kind">Formal methods</div>
-          <div class="project-links"><a href="https://github.com/ysmouhib/common-ground" target="_blank" rel="noopener">GitHub</a></div>
-        </div>
-        <h3>Common Ground</h3>
-        <p class="sub">A first-order logic engine that certifies whether a conclusion follows from premises: an explicit model, a refutation, or a proof checked by the Lean 4 kernel.</p>
-        <p class="project-result">Matches FOLIO labels on 195 of 204 validation examples (95.6%).</p>
-        <div class="tech-tags"><span class="tech-tag">Python</span><span class="tech-tag">Lean 4</span><span class="tech-tag">React</span></div>
-      </article>
-
-      <article class="card">
-        <div class="project-head">
-          <div class="project-kind">AI agents</div>
-          <div class="project-links"><a href="https://github.com/ysmouhib/brigade" target="_blank" rel="noopener">GitHub</a><a href="https://ysmouhib.github.io/brigade/" target="_blank" rel="noopener">Demo</a></div>
-        </div>
-        <h3>Brigade, multi-agent LLM prover</h3>
-        <p class="sub">LLM agents plan, write and repair mathematical proofs, and only the Lean 4 proof checker can accept them. FastAPI backend, Docker image, continuous integration.</p>
-        <p class="project-result">Nothing counts as proved unless Lean verifies it.</p>
-        <div class="tech-tags"><span class="tech-tag">Python</span><span class="tech-tag">FastAPI</span><span class="tech-tag">Lean 4</span><span class="tech-tag">Docker</span><span class="tech-tag">CI</span></div>
-      </article>
-
-      <article class="card">
-        <div class="project-head">
-          <div class="project-kind">Reproducible research</div>
-          <div class="project-links"><a href="https://github.com/ysmouhib/hj-certificates" target="_blank" rel="noopener">GitHub</a></div>
-        </div>
-        <h3>hj-certificates</h3>
-        <p class="sub">SAT encoders and small stand-alone verifiers that independently re-check every bound in my thesis, using nothing beyond standard Python.</p>
-        <p class="project-result">Every thesis bound reproduced in seconds, on every push.</p>
-        <div class="tech-tags"><span class="tech-tag">Python</span><span class="tech-tag">SAT</span><span class="tech-tag">CI</span><span class="tech-tag">Zenodo</span></div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
 <!-- ================= RESEARCH ================= -->
 <section class="section" id="research">
   <div class="container">
@@ -298,11 +220,27 @@ h3{font-size:1rem;font-weight:600;color:var(--ink);line-height:1.35}
         </div>
       </li>
       <li>
+        <div class="date">11.2026</div>
+        <div>
+          <h3>Preprint</h3>
+          <div class="meta"><a href="https://arxiv.org/abs/2611.22205" target="_blank" rel="noopener">arXiv:2611.22205</a> · <a href="https://github.com/ysmouhib/hj-vdw-reproducibility" target="_blank" rel="noopener">GitHub</a> · math.CO, sole author</div>
+          <p>More Lower Bounds for Hales–Jewett and van der Waerden Numbers. Explicit colorings with algebraic certificates give 18 new records, including HJ(4,3) ≥ 164, HJ(5,4) ≥ 7418, HJ(5,6) ≥ 34034 and W(17,3) &gt; 3620; every certificate is verified by direct enumeration.</p>
+        </div>
+      </li>
+      <li>
         <div class="date">06.2026</div>
         <div>
           <h3>Preprint</h3>
-          <div class="meta"><a href="https://arxiv.org/abs/2606.22155" target="_blank" rel="noopener">arXiv:2606.22155</a>, math.CO, sole author</div>
+          <div class="meta"><a href="https://arxiv.org/abs/2606.22155" target="_blank" rel="noopener">arXiv:2606.22155</a> · <a href="https://github.com/ysmouhib/hj-certificates" target="_blank" rel="noopener">GitHub</a> · math.CO, sole author</div>
           <p>Lower Bounds for the Hales–Jewett Numbers via Symmetric and One-Weight Colorings. New records: HJ(3,3) from 14 to 22 and HJ(4,2) from 12 to 14.</p>
+        </div>
+      </li>
+      <li>
+        <div class="date">12.2025</div>
+        <div>
+          <h3>Semester project, ETH Zurich</h3>
+          <div class="meta">Supervisor: Prof. Dr. Lorenz Halbeisen</div>
+          <p><a href="Mouhib_Semester_Project.pdf" target="_blank" rel="noopener">From Hypercubes to Sparse Graphs: Structural Translation of the Hales–Jewett Theorem via Monochromatic Stars</a>. Variants of the Hales–Jewett numbers under strengthened conditions on combinatorial lines, and a construction translating vertex colorings of hypercubes into edge colorings of sparse graphs, where monochromatic stars correspond to monochromatic combinatorial lines.</p>
         </div>
       </li>
       <li>
@@ -310,7 +248,7 @@ h3{font-size:1rem;font-weight:600;color:var(--ink);line-height:1.35}
         <div>
           <h3>Student seminar in combinatorics, ETH Zurich</h3>
           <div class="meta">Prof. Dr. Benny Sudakov</div>
-          <p>«The Graph Regularity Method», two-hour talk on Szemerédi's regularity method: every graph can be partitioned into a bounded number of equally sized parts so that it is random-like between almost all pairs of parts.</p>
+          <p>«The Graph Regularity Method», two-hour talk on Szemerédi's regularity method.</p>
         </div>
       </li>
       <li>
@@ -366,6 +304,39 @@ h3{font-size:1rem;font-weight:600;color:var(--ink);line-height:1.35}
       <div class="skill-row"><div class="skill-label">Languages</div><div>French (native), Moroccan Arabic (native), English (C1), Spanish (B2), Indonesian (A2), German (A1)</div></div>
       <div class="skill-row"><div class="skill-label">Interests</div><div>Chess, literature, martial arts (10+ years), classical and flamenco guitar (10+ years); occasional member of a chess club and a debate club</div></div>
     </div>
+  </div>
+</section>
+
+<!-- ================= PROJECTS ================= -->
+<section class="section" id="projects">
+  <div class="container">
+    <h2>Projects</h2>
+    <ul class="project-list">
+      <li>
+        <h3>Football injury risk<span class="project-kind">Data science</span><span class="plinks"><a href="https://github.com/ysmouhib/football-injury-risk" target="_blank" rel="noopener">GitHub</a></span></h3>
+        <p>Weekly injury-risk scores for every player in Europe's top five leagues, from public data only. On the fully unseen 2024/25 season, the top-10% risk group was injured 6x as often as the bottom-10% (19.5% vs 3.1%). <span class="tech">Python · scikit-learn · calibration</span></p>
+      </li>
+      <li>
+        <h3>Sudoku vision<span class="project-kind">Machine learning</span><span class="plinks"><a href="https://github.com/ysmouhib/sudoku-vision" target="_blank" rel="noopener">GitHub</a></span></h3>
+        <p>A convolutional network reads handwritten sudoku grids, a SAT solver solves them, and MaxSAT repairs the misread digits: fully correct grids rose from 75% to 99% on 1,000 held-out puzzles. <span class="tech">PyTorch · ONNX · SAT/MaxSAT</span></p>
+      </li>
+      <li>
+        <h3>NEAR momentum bot<span class="project-kind">Quantitative evaluation</span><span class="plinks"><a href="https://github.com/ysmouhib/near-momentum-bot" target="_blank" rel="noopener">GitHub</a></span></h3>
+        <p>Cost-aware backtesting and walk-forward validation of a crypto trading strategy; documents honestly that the v1 edge did not survive 0.24% round-trip costs. <span class="tech">Python · backtesting · statistics</span></p>
+      </li>
+      <li>
+        <h3>Common Ground<span class="project-kind">Formal methods</span><span class="plinks"><a href="https://github.com/ysmouhib/common-ground" target="_blank" rel="noopener">GitHub</a></span></h3>
+        <p>A first-order logic engine that certifies whether a conclusion follows from premises: explicit model, refutation, or a proof checked by the Lean 4 kernel. Matches FOLIO labels on 195 of 204 validation examples (95.6%). <span class="tech">Python · Lean 4 · React</span></p>
+      </li>
+      <li>
+        <h3>Brigade, multi-agent LLM prover<span class="project-kind">AI agents</span><span class="plinks"><a href="https://github.com/ysmouhib/brigade" target="_blank" rel="noopener">GitHub</a><a href="https://ysmouhib.github.io/brigade/" target="_blank" rel="noopener">Demo</a></span></h3>
+        <p>LLM agents plan, write and repair mathematical proofs, and only the Lean 4 kernel can accept them: nothing counts as proved unless Lean verifies it. <span class="tech">Python · FastAPI · Lean 4 · Docker · CI</span></p>
+      </li>
+      <li>
+        <h3>hj-certificates<span class="project-kind">Reproducible research</span><span class="plinks"><a href="https://github.com/ysmouhib/hj-certificates" target="_blank" rel="noopener">GitHub</a></span></h3>
+        <p>SAT encoders and stand-alone verifiers that independently re-check every bound in my thesis in seconds, on every push. <span class="tech">Python · SAT · CI · Zenodo</span></p>
+      </li>
+    </ul>
   </div>
 </section>
 
